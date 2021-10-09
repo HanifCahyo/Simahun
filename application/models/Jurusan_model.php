@@ -1,8 +1,8 @@
 <?php
 
-class Admin_model extends CI_Model
+class Jurusan_model extends CI_Model
 {
-    private $_table = "users_admin";
+    private $_table = "users_jurusan";
     const SESSION_KEY = 'user_id';
 
     public function rules()
@@ -41,12 +41,38 @@ class Admin_model extends CI_Model
 
         if ($user) {
             $isPasswordTrue = password_verify($post["password"], $user->password);
-            $isAdmin = $user->role == "Admin";
+            $isGuru = $user->role == "Guru";
 
-            if ($isPasswordTrue && $isAdmin) {
+            if ($isPasswordTrue && $isGuru) {
 
-                $this->session->set_userdata([self::SESSION_KEY => $user->admin_id]);
-                $this->_updateLastLogin($user->admin_id);
+                $this->session->set_userdata([self::SESSION_KEY => $user->user_id]);
+                $this->_updateLastLogin($user->user_id);
+                return $this->session->has_userdata(self::SESSION_KEY);
+            }
+        }
+        return false;
+    }
+
+    public function doLoginSiswa($username, $password)
+    {
+        $post = $this->input->post();
+
+        $this->db->where('email', $username)->or_where('username', $username);
+        $user = $this->db->get($this->_table)->row();
+
+        // cek apakah user sudah terdaftar?
+		if (!$user) {
+			return FALSE;
+		}
+
+        if ($user) {
+            $isPasswordTrue = password_verify($post["password"], $user->password);
+            $isSiswa = $user->role == "Siswa";
+
+            if ($isPasswordTrue && $isSiswa) {
+
+                $this->session->set_userdata([self::SESSION_KEY => $user->user_id]);
+                $this->_updateLastLogin($user->user_id);
                 return $this->session->has_userdata(self::SESSION_KEY);
             }
         }
@@ -59,21 +85,21 @@ class Admin_model extends CI_Model
 			return null;
 		}
 
-		$admin_id = $this->session->userdata(self::SESSION_KEY);
-		$query = $this->db->get_where($this->_table, ['admin_id' => $admin_id]);
+		$user_id = $this->session->userdata(self::SESSION_KEY);
+		$query = $this->db->get_where($this->_table, ['user_id' => $user_id]);
 		return $query->row();
 	}
 
-    private function _updateLastLogin($admin_id)
+    private function _updateLastLogin($user_id)
     {
-        $sql = "UPDATE {$this->_table} SET last_login=now() WHERE admin_id={$admin_id}";
+        $sql = "UPDATE {$this->_table} SET last_login=now() WHERE user_id={$user_id}";
         $this->db->query($sql);
     }
 
     public function update()
     {
         $post = $this->input->post();
-        $this->admin_id = $post["admin_id"];
+        $this->user_id = $post["user_id"];
         $this->username = $post["username"];
         $this->password = $post["password"];
         $this->email = $post["email"];
@@ -83,14 +109,14 @@ class Admin_model extends CI_Model
         } else {
             $this->image = $post["old_image"];
         }
-        return $this->db->update($this->_table, $this, array('admin_id' => $post['admin_id']));
+        return $this->db->update($this->_table, $this, array('user_id' => $post['user_id']));
     }
 
     private function _uploadImage()
     {
         $config['upload_path']          = './upload/avatar/';
         $config['allowed_types']        = 'gif|jpg|png';
-        $config['file_name']            = $this->admin_id;
+        $config['file_name']            = $this->user_id;
         $config['overwrite']            = true;
         $config['max_size']             = 1024; // 1MB
         // $config['max_width']            = 1024;

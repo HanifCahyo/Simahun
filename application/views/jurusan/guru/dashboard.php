@@ -247,6 +247,9 @@
 
     <?php $this->load->view("jurusan/guru/_partials/js.php") ?>
 
+    <!-- Logout Modal-->
+    <?php $this->load->view("jurusan/guru/_partials/modal.php") ?>
+
 </body>
 
 </html>
