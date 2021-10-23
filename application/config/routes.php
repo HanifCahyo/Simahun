@@ -56,3 +56,4 @@ $route['admin'] = 'admin/dashboard';
 $route['jurusan'] = 'jurusan/login';
 $route['guru'] = 'jurusan/guru/dashboard';
 $route['siswa'] = 'jurusan/guru/dashboard';
+
