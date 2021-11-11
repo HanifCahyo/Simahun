@@ -24,13 +24,14 @@
                     </div>
                     <div class="col-md-8">
                         <h4 class="font-20 weight-500 mb-10 text-capitalize">
-                            Welcome back <div class="weight-600 font-30 text-blue">Johnny Brown!</div>
+                            Welcome back <div class="weight-600 font-30 text-blue">GURU</div>
                         </h4>
                         <p class="font-18 max-width-600">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde hic non repellendus debitis iure, doloremque assumenda. Autem modi, corrupti, nobis ea iure fugiat, veniam non quaerat mollitia animi error corporis.</p>
                     </div>
                 </div>
             </div>
             <div class="row">
+			<div class="pd-ltr-20">
             <div class="product-wrap">
 					<div class="product-list">
 						<ul class="row">
@@ -72,10 +73,12 @@
             </div>
             <?php $this->load->view("jurusan/guru/_partials/footer.php") ?>
         </div>
+		</div>
     </div>
 
     <?php $this->load->view("jurusan/guru/_partials/js.php") ?>
 
+	
     <!-- Logout Modal-->
     <?php $this->load->view("jurusan/guru/_partials/modal.php") ?>
 
