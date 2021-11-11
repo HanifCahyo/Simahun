@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+   <!DOCTYPE html>
 <html>
 
 <head>
@@ -22,63 +22,65 @@
                     </div>
                     <div class="col-md-8">
                         <h4 class="font-20 weight-500 mb-10 text-capitalize">
+
                             Welcome back <div class="weight-600 font-30 text-blue"><?= htmlentities($current_user->name) ?></div>
+
                         </h4>
                         <p class="font-18 max-width-600">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde hic non repellendus debitis iure, doloremque assumenda. Autem modi, corrupti, nobis ea iure fugiat, veniam non quaerat mollitia animi error corporis.</p>
                     </div>
                 </div>
             </div>
             <div class="row">
-                <div class="product-wrap">
-                    <div class="product-list">
-                        <ul class="row">
-                            <li class="col-lg-3 col-md-3 col-sm-6">
-                                <div class="product-box">
-                                    <div class="producct-img"><img src="<?php echo base_url('assets_deskapp/vendors/images/product-img1.jpg') ?>" alt=""></div>
-                                    <div class="product-caption">
-                                        <h4><a href="#">Input Pengajuan PKL</a></h4>
-                                        <a href="#" class="btn btn-outline-primary">Go</a>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="col-lg-3 col-md-6 col-sm-12">
-                                <div class="product-box">
-                                    <div class="producct-img"><img src="<?php echo base_url('assets_deskapp/vendors/images/product-img2.jpg') ?>" alt=""></div>
-                                    <div class="product-caption">
-                                        <h4><a href="#">Cetak Lembar Monitoring</a></h4>
-                                        <a href="#" class="btn btn-outline-primary">Go</a>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="col-lg-3 col-md-6 col-sm-12">
-                                <div class="product-box">
-                                    <div class="producct-img"><img src="<?php echo base_url('assets_deskapp/vendors/images/product-img3.jpg') ?>" alt=""></div>
-                                    <div class="product-caption">
-                                        <h4><a href="#">Cetak Penarikan</a></h4>
-                                        <a href="#" class="btn btn-outline-primary">Go</a>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="col-lg-3 col-md-6 col-sm-12">
-                                <div class="product-box">
-                                    <div class="producct-img"><img src="<?php echo base_url('assets_deskapp/vendors/images/product-img4.jpg') ?>" alt=""></div>
-                                    <div class="product-caption">
-                                        <h4><a href="#">Cetak Sertifikat PKL</a></h4>
-                                        <a href="#" class="btn btn-outline-primary">Go</a>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+
+			<div class="pd-ltr-20">
+            <div class="product-wrap">
+					<div class="product-list">
+						<ul class="row">
+							<li class="col-lg-3 col-md-4 col-sm-7">
+								<div class="product-box">
+									<div class="producct-img"><img src="<?php echo base_url('assets_deskapp/vendors/images/product-img1.jpg')?>" alt=""></div>
+									<div class="product-caption">
+										<h4><a href="#">Input Pengajuan PKL</a></h4>
+										<a href="<?php echo site_url('jurusan/guru/Input_pengajuan/') ?>" class="btn btn-outline-primary">Go</a>
+									</div>
+								</div>
+							</li>
+							<li class="col-lg-3 col-md-6 col-sm-7">
+								<div class="product-box">
+									<div class="producct-img"><img src="<?php echo base_url('assets_deskapp/vendors/images/product-img2.jpg')?>" alt=""></div>
+									<div class="product-caption">
+										<h4><a href="#">Cetak Lembar Monitoring</a></h4>
+										<a href="<?php echo site_url('jurusan/guru/Cetak_lembarmonitoring/') ?>" class="btn btn-outline-primary">Go</a>
+									</div>
+								</div>
+							</li>
+							<li class="col-lg-3 col-md-6 col-sm-7">
+								<div class="product-box">
+									<div class="producct-img"><img src="<?php echo base_url('assets_deskapp/vendors/images/product-img3.jpg')?>" alt=""></div>
+									<div class="product-caption">
+										<h4><a href="">Cetak Penarikan PKL</a></h4>
+										<a href="<?php echo site_url('jurusan/guru/Cetak_penarikan/') ?>" class="btn btn-outline-primary">Go</a>
+									</div>
+								</div>
+							</li>
+							<li class="col-lg-3 col-md-6 col-sm-7">
+								<div class="product-box">
+									<div class="producct-img"><img src="<?php echo base_url('assets_deskapp/vendors/images/product-img4.jpg')?>" alt=""></div>
+									<div class="product-caption">
+										<h4><a href="#">Cetak Sertifikat PKL</a></h4>
+										<a href="<?php echo site_url('jurusan/guru/Cetak_sertifikat/') ?>" class="btn btn-outline-primary">Go</a>
+									</div>
+								</div>         
             </div>
         </div>
+		</div>
         <?php $this->load->view("jurusan/guru/_partials/footer.php") ?>
     </div>
     </div>
 
     <?php $this->load->view("jurusan/guru/_partials/js.php") ?>
 
+	
     <!-- Logout Modal-->
     <?php $this->load->view("jurusan/guru/_partials/modal.php") ?>
 
