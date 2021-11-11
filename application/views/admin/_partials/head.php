@@ -15,6 +15,7 @@
 <!-- CSS -->
 <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets_deskapp/vendors/styles/core.css') ?>">
 <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets_deskapp/vendors/styles/icon-font.min.css') ?>">
+<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets_deskapp/src/plugins/dropzone/src/dropzone.css') ?>">
 <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets_deskapp/src/plugins/datatables/css/dataTables.bootstrap4.min.css') ?>">
 <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets_deskapp/src/plugins/datatables/css/responsive.bootstrap4.min.css') ?>">
 <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets_deskapp/vendors/styles/style.css') ?>">

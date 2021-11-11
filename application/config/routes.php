@@ -53,7 +53,7 @@ $route['default_controller'] = 'welcome';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 $route['admin'] = 'admin/dashboard';
-$route['jurusan'] = 'jurusan/login';
+$route['jurusan'] = 'jurusan/auth/login';
 $route['guru'] = 'jurusan/guru/dashboard';
 $route['siswa'] = 'jurusan/guru/dashboard';
 
