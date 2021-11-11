@@ -2,19 +2,17 @@
 <html>
 
 <head>
-    <?php $this->load->view("guru/_partials/head.php") ?>
+    <?php $this->load->view("siswa/_partials/head.php") ?>
 </head>
 
 <body>
-    <?php $this->load->view("guru/_partials/loader.php") ?>
+    <?php $this->load->view("siswa/_partials/loader.php") ?>
 
-    <?php $this->load->view("guru/_partials/navbar.php") ?>
+    <?php $this->load->view("siswa/_partials/navbar.php") ?>
 
-    <?php $this->load->view("guru/_partials/sidebar.php") ?>
+    <?php $this->load->view("siswa/_partials/sidebar.php") ?>
 
-    <?php $this->load->view("guru/_partials/loader.php") ?>
-
-    <div class="mobile-menu-overlay"></div>
+     <div class="mobile-menu-overlay"></div>
     <div class="main-container">
         <div class="pd-ltr-20">
             <div class="card-box pd-20 height-100-p mb-30">
@@ -241,11 +239,11 @@
                     </tbody>
                 </table>
             </div>
-            <?php $this->load->view("jurusan/guru/_partials/footer.php") ?>
+            <?php $this->load->view("jurusan/siswa/_partials/footer.php") ?>
         </div>
     </div>
 
-    <?php $this->load->view("jurusan/guru/_partials/js.php") ?>
+    <?php $this->load->view("jurusan/siswa/_partials/js.php") ?>
 
     <!-- Logout Modal-->
     <?php $this->load->view("jurusan/siswa/_partials/modal.php") ?>

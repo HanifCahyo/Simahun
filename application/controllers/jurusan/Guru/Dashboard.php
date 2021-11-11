@@ -6,16 +6,17 @@ class Dashboard extends CI_Controller
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->model("jurusan_model");
-		if(!$this->jurusan_model->current_user()){
-			redirect('jurusan/login');
+		$this->load->model("auth_model");
+		if(!$this->auth_model->current_user()){
+			redirect('jurusan/auth/login');
 		}
 		
 	}
 	
 	public function index()
 	{
-		$this->load->view("jurusan/guru/dashboard");
+		$data['current_user'] = $this->auth_model->current_user();
+		$this->load->view("jurusan/guru/dashboard", $data);
 	}
 
 }

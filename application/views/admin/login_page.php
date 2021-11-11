@@ -43,11 +43,6 @@
 					<img src="<?php echo base_url('assets_deskapp/vendors/images/deskapp-logo.svg') ?>" alt="">
 				</a>
 			</div>
-			<div class="login-menu">
-				<ul>
-					<li><a href="<?php echo base_url('assets_deskapp/register.html') ?>">Register</a></li>
-				</ul>
-			</div>
 		</div>
 	</div>
 	<div class="login-wrap d-flex align-items-center flex-wrap justify-content-center">
@@ -59,69 +54,44 @@
 				<div class="col-md-6 col-lg-5">
 					<div class="login-box bg-white box-shadow border-radius-10">
 						<div class="login-title">
-							<h2 class="text-center text-primary">Login To DeskApp</h2>
+							<h2 class="text-center text-primary">Login Dashboard Admin</h2>
 						</div>
-						<form action="<?= site_url('admin/login') ?>" method="post">
-							<?php if (isset($error_msg)) {
-								echo $error_msg;
-							} ?>
-							<div class="select-role">
-								<div class="btn-group btn-group-toggle" data-toggle="buttons">
-									<label class="btn active">
-										<input type="radio" name="options" id="admin">
-										<div class="icon"><img src="<?php echo base_url('assets_deskapp/vendors/images/briefcase.svg') ?>" class="svg" alt=""></div>
-										<span>I'm</span>
-										Manager
-									</label>
-									<label class="btn">
-										<input type="radio" name="options" id="user">
-										<div class="icon"><img src="<?php echo base_url('assets_deskapp/vendors/images/person.svg') ?>" class="svg" alt=""></div>
-										<span>I'm</span>
-										Employee
-									</label>
-								</div>
+						<?php if ($this->session->flashdata('message_login_error')) : ?>
+							<div class="alert alert-danger alert-dismissible fade show" role="alert">
+								<?= $this->session->flashdata('message_login_error') ?>
+								<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
 							</div>
+						<?php endif ?>
+						<form action="" method="post">
+
 							<div class="input-group custom">
-								<input type="username" class="form-control form-control-lg" placeholder="Username" name="username">
+								<input type="username" class="form-control form-control-lg <?= form_error('nis') ? 'invalid' : '' ?>" placeholder="NIS" name="nis" value="<?= set_value('nis') ?>" required>
 								<div class="input-group-append custom">
 									<span class="input-group-text"><i class="icon-copy dw dw-user1"></i></span>
 								</div>
+								<div class="invalid-feedback">
+									<?= form_error('nis') ?>
+								</div>
 							</div>
 							<div class="input-group custom">
-								<input type="password" class="form-control form-control-lg" placeholder="**********" name="password">
+								<input type="password" class="form-control form-control-lg <?= form_error('password') ? 'invalid' : '' ?>" placeholder="**********" name="password" value="<?= set_value('password') ?>" required>
 								<div class="input-group-append custom">
 									<span class="input-group-text"><i class="dw dw-padlock1"></i></span>
 								</div>
-							</div>
-							<?php if ($this->session->flashdata('message_login_error')) : ?>
 								<div class="invalid-feedback">
-									<?= $this->session->flashdata('message_login_error') ?>
-								</div>
-							<?php endif ?>
-							<div class="row pb-30">
-								<div class="col-6">
-									<div class="custom-control custom-checkbox">
-										<input type="checkbox" class="custom-control-input" id="customCheck1">
-										<label class="custom-control-label" for="customCheck1">Remember</label>
-									</div>
-								</div>
-								<div class="col-6">
-									<div class="forgot-password"><a href="forgot-password.html">Forgot Password</a></div>
+									<?= form_error('password') ?>
 								</div>
 							</div>
 							<div class="row">
 								<div class="col-sm-12">
 									<div class="input-group mb-0">
-										<input class="btn btn-primary btn-lg btn-block" type="submit" value="Sign In" data-toggle="modal" data-target="#success-modal">
-									</div>
-									<div class="font-16 weight-600 pt-10 pb-10 text-center" data-color="#707373">OR</div>
-									<div class="input-group mb-0">
-										<a class="btn btn-outline-primary btn-lg btn-block" href="register.html">Register To Create Account</a>
+										<input class="btn btn-primary btn-lg btn-block" type="submit" value="Sign In">
 									</div>
 								</div>
 							</div>
 						</form>
-						<?php if(isset($script)){ echo $script; } ?>
 					</div>
 				</div>
 			</div>
@@ -133,9 +103,6 @@
 	<script src="<?php echo base_url('assets_deskapp/vendors/scripts/process.js') ?>"></script>
 	<script src="<?php echo base_url('assets_deskapp/vendors/scripts/layout-settings.js') ?>"></script>
 
-	<!-- Login Success Modal-->
-	<?php $this->load->view("admin/_partials/modal.php") ?>
-	
 </body>
 
 </html>
