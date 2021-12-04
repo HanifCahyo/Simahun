@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<?php $this->load->view("jurusan/guru/_partials/head.php") ?>
+	<?php $this->load->view("jurusan/guru/_partials/head.php") ?>
 </head>
+
 <body>
 
-<?php $this->load->view("jurusan/guru/_partials/navbar.php") ?>
+	<?php $this->load->view("jurusan/guru/_partials/navbar.php") ?>
 
-<?php $this->load->view("jurusan/guru/_partials/sidebar.php") ?>
+	<?php $this->load->view("jurusan/guru/_partials/sidebar.php") ?>
 
 
 	<div class="mobile-menu-overlay"></div>
@@ -28,7 +30,7 @@
 								</ol>
 							</nav>
 						</div>
-						
+
 					</div>
 				</div>
 				<!-- Bordered table End -->
@@ -39,6 +41,10 @@
 							<h4 class="text-blue h4">List Pengajuan</h4>
 						</div>
 					</div>
+					<?php if ($this->session->flashdata('msg_success')) : ?>
+						<div class="alert alert-success alert-dismissible fade show" role="alert"><?php echo $this->session->flashdata('msg_success') ?>
+						</div>
+					<?php endif ?>
 					<table class="table table-striped">
 						<thead>
 							<tr>
@@ -46,124 +52,68 @@
 								<th scope="col">Nama</th>
 								<th scope="col">Jurusan</th>
 								<th scope="col">Tempat PKL</th>
-								<th scope="col">Status</th>
+								<!-- <th scope="col">Status</th> -->
 								<th scope="col">Action</th>
 							</tr>
 						</thead>
 						<tbody>
-							<tr>
-								<th scope="row">01210</th>
-								<td>Mark</td>
-								<td>Otto</td>
-								<td>@mdo</td>
-								<td><span class="badge badge-primary">Primary</span></td>
-								<td>
+							<?php
+							$no = 1;
+							foreach ($pengajuan_pkl as $aaa) :
+							?>
+								<tr>
+									<th scope="row"><?php echo $aaa->nis ?></th>
+									<td><?php echo $aaa->name ?></td>
+									<td><?php echo $aaa->program_studi ?></td>
+									<td><?php echo $aaa->nama_perusahaan ?></td>
+									<!-- <td><span class="badge badge-secondary">Secondary</span></td> -->
+									<td>
 										<div class="dropdown">
 											<a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">
 												<i class="dw dw-more"></i>
 											</a>
 											<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
 												<a class="dropdown-item" href="#"><i class="dw dw-eye"></i> View</a>
-												<a class="dropdown-item" href="#"><i class="dw dw-edit2"></i> Edit</a>
-												<a class="dropdown-item" href="#"><i class="dw dw-delete-3"></i> Delete</a>
+												<a class="dropdown-item" href="<?php echo site_url('jurusan/guru/list_pengajuan/edit/' . $aaa->id) ?>"><i class="dw dw-edit2"></i> Edit</a>
+												<a class="dropdown-item" onclick="deleteConfirm('<?php echo site_url('jurusan/guru/list_pengajuan/delete/' . $aaa->id) ?>')" href="#!"><i class="dw dw-delete-3"></i> Delete</a>
 												<a class="dropdown-item" href="#"><i class="dw dw-print"></i> Print</a>
 											</div>
 										</div>
-							</tr>
-							<tr>
-								<th scope="row">02020</th>
-								<td>Jacob</td>
-								<td>Thornton</td>
-								<td>@fat</td>
-								<td><span class="badge badge-success">Success</span></td>
-								<td>
-										<div class="dropdown">
-											<a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">
-												<i class="dw dw-more"></i>
-											</a>
-											<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-												<a class="dropdown-item" href="#"><i class="dw dw-eye"></i> View</a>
-												<a class="dropdown-item" href="#"><i class="dw dw-edit2"></i> Edit</a>
-												<a class="dropdown-item" href="#"><i class="dw dw-delete-3"></i> Delete</a>
-												<a class="dropdown-item" href="#"><i class="dw dw-print"></i> Print</a>
-											</div>
-										</div>
-							</tr>
-							<tr>
-								<th scope="row">03230</th>
-								<td>Larry</td>
-								<td>the Bird</td>
-								<td>@twitter</td>
-								<td><span class="badge badge-success">Success</span></td>
-								<td>
-										<div class="dropdown">
-											<a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">
-												<i class="dw dw-more"></i>
-											</a>
-											<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-												<a class="dropdown-item" href="#"><i class="dw dw-eye"></i> View</a>
-												<a class="dropdown-item" href="#"><i class="dw dw-edit2"></i> Edit</a>
-												<a class="dropdown-item" href="#"><i class="dw dw-delete-3"></i> Delete</a>
-												<a class="dropdown-item" href="#"><i class="dw dw-print"></i> Print</a>
-											</div>
-										</div>
-							</tr>
-							<tr>
-								<th scope="row">04540</th>
-								<td>Jacob</td>
-								<td>Thornton</td>
-								<td>@fat</td>
-								<td><span class="badge badge-secondary">Secondary</span></td>
-								<td>
-										<div class="dropdown">
-											<a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">
-												<i class="dw dw-more"></i>
-											</a>
-											<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-												<a class="dropdown-item" href="#"><i class="dw dw-eye"></i> View</a>
-												<a class="dropdown-item" href="#"><i class="dw dw-edit2"></i> Edit</a>
-												<a class="dropdown-item" href="#"><i class="dw dw-delete-3"></i> Delete</a>
-												<a class="dropdown-item" href="#"><i class="dw dw-print"></i> Print</a>
-											</div>
-										</div>
-							</tr>
-							<tr>
-								<th scope="row">05950</th>
-								<td>Larry</td>
-								<td>the Bird</td>
-								<td>@twitter</td>
-								<td><span class="badge badge-secondary">Secondary</span></td>
-								<td>
-										<div class="dropdown">
-											<a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">
-												<i class="dw dw-more"></i>
-											</a>
-											<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-												<a class="dropdown-item" href="#"><i class="dw dw-eye"></i> View</a>
-												<a class="dropdown-item" href="#"><i class="dw dw-edit2"></i> Edit</a>
-												<a class="dropdown-item" href="#"><i class="dw dw-delete-3"></i> Delete</a>
-												<a class="dropdown-item" href="#"><i class="dw dw-print"></i> Print</a>
-											</div>
-										</div>
-							</tr>
+								</tr>
+							<?php endforeach; ?>
 						</tbody>
 					</table>
-					
-                   </div>
-					
-							</code></pre>
+					<div class="row">
+						<div class="col-sm-12 col-md-10">
+							<button type="button" class="btn btn-outline-success">Submit</button>
+							<button type="button" class="btn btn-outline-info">Print</button>
+
 						</div>
 					</div>
+
+					</code></pre>
 				</div>
-	
-				<!-- Contextual classes End -->
 			</div>
-			<?php $this->load->view("jurusan/guru/_partials/footer.php") ?>
 		</div>
+
+		<!-- Contextual classes End -->
+	</div>
+	<?php $this->load->view("jurusan/guru/_partials/footer.php") ?>
+	</div>
 	</div>
 	<!-- js -->
 	<?php $this->load->view("jurusan/guru/_partials/js.php") ?>
 
-	
+	<?php $this->load->view("admin/_partials/modal.php") ?>
+
+    <script>
+        function deleteConfirm(url) {
+            $('#btn-delete').attr('href', url);
+            $('#deleteModal').modal();
+        }
+    </script>
+
+
 </body>
+
 </html>

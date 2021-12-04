@@ -7,9 +7,8 @@ class  Cetak_lembarmonitoring extends CI_Controller
 		parent::__construct();
 		$this->load->model("auth_model");
 		if(!$this->auth_model->current_user()){
-			redirect('admin/auth/login');
-		}
-		
+			redirect('login');
+		}		
 	}
 	
 	public function index()

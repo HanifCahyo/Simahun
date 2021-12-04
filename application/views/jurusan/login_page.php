@@ -56,17 +56,9 @@
 						<div class="login-title">
 							<h2 class="text-center text-primary">Login Simahun</h2>
 						</div>
-						<?php if ($this->session->flashdata('message')) : ?>
-							<div class="alert alert-success alert-dismissible fade show" role="alert">
-								<?= $this->session->flashdata('message') ?>
-								<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-									<span aria-hidden="true">&times;</span>
-								</button>
-							</div>
-						<?php endif ?>
-						<?php if ($this->session->flashdata('message_error')) : ?>
+						<?php if ($this->session->flashdata('message_login_error')) : ?>
 							<div class="alert alert-danger alert-dismissible fade show" role="alert">
-								<?= $this->session->flashdata('message_error') ?>
+								<?= $this->session->flashdata('message_login_error') ?>
 								<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 									<span aria-hidden="true">&times;</span>
 								</button>

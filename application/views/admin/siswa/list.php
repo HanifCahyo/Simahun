@@ -21,7 +21,7 @@
 
                 <!-- Simple Datatable start -->
                 <div class="card-box mb-30">
-                    <?php if ($this->session->flashdata('message')) : ?>
+                <?php if ($this->session->flashdata('message')) : ?>
                         <div class="alert alert-success alert-dismissible fade show" role="alert">
                             <?= $this->session->flashdata('message') ?>
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -33,15 +33,17 @@
                         <thead>
                             <tr>
 
-                                <th class="table-plus datatable-nosort">Nama</th>
+                                <th class="table-plus datatable-nosort">NIS</th>
+                                <th>Nama</th>
                                 <th>Jurusan</th>
                                 <th class="datatable-nosort">Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <?php foreach ($siswa as $siswa) : ?>
+                        <?php foreach ($siswa as $siswa) : ?>
                                 <tr>
-                                    <td class="table-plus"><?php echo $siswa->name ?></td>
+                                    <td class="table-plus"><?php echo $siswa->nis ?></td>
+                                    <td><?php echo $siswa->name ?></td>
                                     <td><?php echo $siswa->program_studi ?></td>
                                     <td>
                                         <div class="dropdown">
@@ -50,8 +52,8 @@
                                             </a>
                                             <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
                                                 <a class="dropdown-item" href="#"><i class="dw dw-eye"></i> View</a>
-                                                <a class="dropdown-item" href="<?php echo site_url('admin/siswa/edit/' . $siswa->id) ?>"><i class="dw dw-edit2"></i> Edit</a>
-                                                <a class="dropdown-item" onclick="deleteConfirm('<?php echo site_url('admin/siswa/delete/' . $siswa->id) ?>')" href="#!">><i class="dw dw-delete-3"></i> Delete</a>
+                                                <a class="dropdown-item" href="<?php echo site_url('admin/siswa/edit/' . $siswa->nis) ?>"><i class="dw dw-edit2"></i> Edit</a>
+                                                <a class="dropdown-item" onclick="deleteConfirm('<?php echo site_url('admin/siswa/delete/' . $siswa->nis) ?>')" href="#!"><i class="dw dw-delete-3"></i> Delete</a>
                                             </div>
                                         </div>
                                     </td>
@@ -86,6 +88,8 @@
     <script src="<?php echo base_url('assets_deskapp/src/plugins/datatables/js/vfs_fonts.js') ?>"></script>
     <!-- Datatable Setting js -->
     <script src="<?php echo base_url('assets_deskapp/vendors/scripts/datatable-setting.js') ?>"></script>
+
+    <?php $this->load->view("admin/_partials/modal.php") ?>
 
     <script>
         function deleteConfirm(url) {

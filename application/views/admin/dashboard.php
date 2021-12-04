@@ -6,7 +6,6 @@
 </head>
 
 <body>
-    <?php $this->load->view("admin/_partials/loader.php") ?>
 
     <?php $this->load->view("admin/_partials/navbar.php") ?>
 

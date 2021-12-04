@@ -31,14 +31,11 @@ class Auth extends CI_Controller
 
 		if ($this->auth_model->doLoginGuru($nis, $password)) {
 			redirect('guru');
-		} else {
-			$this->session->set_flashdata('message_error', 'Login Gagal, pastikan NIS dan password benar!');
-		}
-
-		if ($this->auth_model->doLoginSiswa($nis, $password)) {
+		} elseif ($this->auth_model->doLoginSiswa($nis, $password)) {
 			redirect('siswa');
 		} else {
-			$this->session->set_flashdata('message_error', 'Login Gagal, pastikan NIS dan password benar!');
+			$this->session->set_flashdata('message_login_error', 'Login Gagal, pastikan NIS dan password benar!');
+			redirect('siswa');
 		}
 
 		$this->load->view('jurusan/login_page.php');
@@ -47,6 +44,6 @@ class Auth extends CI_Controller
 	public function logout()
 	{
 		$this->session->sess_destroy();
-		redirect(site_url('jurusan/auth/login'));
+		redirect(site_url('login'));
 	}
 }

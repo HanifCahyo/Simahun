@@ -30,13 +30,26 @@ class Siswa_model extends CI_Model
     {
         $post = $this->input->post();
         $this->nis = $post["nis"];
-        $this->username = $post["username"];
-        $this->program_studi = $post["prodi_studi"];
+        $this->name = $post["name"];
+        $this->program_studi = $post["program_studi"];
         return $this->db->update($this->_table, $this, array('nis' => $post['nis']));
     }
 
     public function delete($id)
     {
         return $this->db->delete($this->_table, array("nis" => $id));
+    }
+
+    function prodi_enums($table, $field)
+    {
+        $query = "SHOW COLUMNS FROM " . $table . " LIKE '$field'";
+        $row = $this->db->query("SHOW COLUMNS FROM " . $table . " LIKE '$field'")->row()->Type;
+        $regex = "/'(.*?)'/";
+        preg_match_all($regex, $row, $enum_array);
+        $enum_fields = $enum_array[1];
+        foreach ($enum_fields as $key => $value) {
+            $enums[$value] = $value;
+        }
+        return $enums;
     }
 }

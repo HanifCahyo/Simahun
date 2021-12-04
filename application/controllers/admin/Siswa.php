@@ -12,7 +12,7 @@ class Siswa extends CI_Controller
         $this->load->library('form_validation');
 		$this->load->library('session');
         if(!$this->auth_model->current_user()){
-			redirect('admin/auth/login');
+			redirect('login');
 		}
 	}
 
@@ -41,6 +41,7 @@ class Siswa extends CI_Controller
 		$data["siswa"] = $siswa->getById($id);
         if (!$data["siswa"]) show_404();
 
+		$data['program_studi']=$this->siswa_model->prodi_enums('user','program_studi');
 		$data['current_user'] = $this->auth_model->current_user();
 		$this->load->view("admin/siswa/edit_form", $data);
 	}
