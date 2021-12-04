@@ -5,7 +5,7 @@
 </head>
 <body>
 
-	<?php $this->load->view("jurusan/guru/_partials/loader.php") ?>
+	
 
     <?php $this->load->view("jurusan/guru/_partials/navbar.php") ?>
 

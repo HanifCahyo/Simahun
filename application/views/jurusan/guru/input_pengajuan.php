@@ -5,7 +5,6 @@
 </head>
 <body>
 
-	<?php $this->load->view("jurusan/guru/_partials/loader.php") ?>
 
     <?php $this->load->view("jurusan/guru/_partials/navbar.php") ?>
 
@@ -89,7 +88,6 @@
 						</div>
                         <div class="form-group row">
                             <div class="col-sm-12 col-md-10">
-                                <input class="btn btn-success" type="submit" value="INPUT PERMOHONAN DATA SISWA PKL" />
 								<a href="<?php echo site_url('jurusan/guru/List_pengajuan/') ?>" class="btn btn-outline-primary">INPUT PERMOHONAN DATA SISWA PKL</a>
                             </div>
                         </div>

@@ -84,11 +84,7 @@
 						</tbody>
 					</table>
 					
-                    <div class="row">
-                    <div class="col-sm-12 col-md-10">
-                    <button type="button" class="btn btn-outline-success">Submit</button>
-                    <button type="button" class="btn btn-outline-info">Print</button>
-                   </div>
+                   
                    </div>
 							</code></pre>
 						</div>
