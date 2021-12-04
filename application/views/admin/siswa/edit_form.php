@@ -22,35 +22,38 @@
                 <!-- Default Basic Forms Start -->
                 <div class="pd-20 card-box mb-30">
 
-                    <div class="clearfix">
+                    <!-- <div class="clearfix">
                         <div class="pull-left">
                             <h4 class="text-blue h4">Siswa</h4>
                             <p class="mb-30">Edit data siswa</p>
                         </div>
-                    </div>
+                    </div> -->
 
                     <form action="" method="post" enctype="multipart/form-data">
-                        <input type="hidden" name="id" value="<?php echo $siswa->id ?>" />
+                        <input type="hidden" name="nis" value="<?php echo $siswa->nis ?>" />
                         <div class="form-group row">
-                            <label class="col-sm-12 col-md-2 col-form-label">Username</label>
+                            <label class="col-sm-12 col-md-2 col-form-label">name</label>
                             <div class="col-sm-12 col-md-10">
-                                <input class="form-control <?php echo form_error('username') ? 'is-invalid' : '' ?>" type="text" placeholder="" name="username" value="<?php echo $siswa->username ?>">
+                                <input class="form-control <?php echo form_error('name') ? 'is-invalid' : '' ?>" type="text" placeholder="" name="name" value="<?php echo $siswa->name ?>">
                             </div>
                             <div class="invalid-feedback">
-                                <?php echo form_error('username') ?>
+                                <?php echo form_error('name') ?>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label class="col-sm-12 col-md-2 col-form-label">Jurusan</label>
                             <div class="col-sm-12 col-md-10">
-                                <select class="custom-select col-12" name="prodi_keahlian" class="form-control <?php echo form_error('prodi_keahlian') ? 'is-invalid' : '' ?>">
-                                    <option selected=""><?php echo $siswa->prodi_keahlian ?></option>
-                                    <option value="RPL">RPL</option>
-                                    <option value="Animasi">Animasi</option>
-                                    <option value="DKV">DKV</option>
+                                <select class="custom-select col-12" name="program_studi" class="form-control <?php echo form_error('program_studi') ? 'is-invalid' : '' ?>">
+                                    <option selected=""><?php echo $siswa->program_studi ?></option>
+                                    <?php 
+                                    $array = array_values($program_studi);
+                                    foreach($array as $l) { 
+                                    echo "<option value='$l'>$l</option>";
+                                    }
+                                    ?>
                                 </select>
                                 <div class="invalid-feedback">
-                                    <?php echo form_error('prodi_keahlian') ?>
+                                    <?php echo form_error('program_studi') ?>
                                 </div>
                             </div>
                         </div>

@@ -99,8 +99,8 @@
                         <span class="micon dw dw-edit2"></span><span class="mtext">Forms</span>
                     </a>
                     <ul class="submenu">
-                        <li><a href=<?php echo site_url('jurusan/guru/Form_pengajuan/') ?>>Input Pengajuan PKL</a></li>
-                        <li><a href=<?php echo site_url('jurusan/guru/Cetak_monitoring/') ?>>Cetak Lembar Monitoring</a></li>
+                        <li><a href=<?php echo site_url('jurusan/guru/Input_pengajuan/') ?>>Input Pengajuan PKL</a></li>
+                        <li><a href=<?php echo site_url('jurusan/guru/Cetak_lembarmonitoring/') ?>>Cetak Lembar Monitoring</a></li>
                         <li><a href="<?php echo site_url('jurusan/guru/Cetak_penarikan/') ?>">Cetak Penarikan PKL</a></li>
                         <li><a href="<?php echo site_url('jurusan/guru/Cetak_sertifikat/') ?>">Cetak Sertifikat PKL</a></li>
                         

@@ -5,14 +5,9 @@
 </head>
 <body>
 
-	<?php $this->load->view("jurusan/guru/_partials/loader.php") ?>
-
     <?php $this->load->view("jurusan/guru/_partials/navbar.php") ?>
 
 	<?php $this->load->view("jurusan/guru/_partials/sidebar.php") ?>
-
-	<?php $this->load->view("jurusan/guru/_partials/loader.php") ?>
-
 
 	<div class="mobile-menu-overlay"></div>
 

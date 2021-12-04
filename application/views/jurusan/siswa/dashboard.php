@@ -6,7 +6,6 @@
 </head>
 
 <body>
-    <?php $this->load->view("siswa/_partials/loader.php") ?>
 
     <?php $this->load->view("siswa/_partials/navbar.php") ?>
 

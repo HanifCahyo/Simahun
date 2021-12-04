@@ -12,7 +12,7 @@ class Guru extends CI_Controller
 		$this->load->library('form_validation');
 		$this->load->library('session');
 		if (!$this->auth_model->current_user()) {
-			redirect('admin/auth/login');
+			redirect('login');
 		}
 	}
 
