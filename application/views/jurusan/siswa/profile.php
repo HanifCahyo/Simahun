@@ -2,21 +2,21 @@
 <html>
 
 <head>
-	<?php $this->load->view("admin/_partials/head.php") ?>
+	<?php $this->load->view("jurusan/siswa/_partials/head.php") ?>
 </head>
 
 <body>
 
-	<?php $this->load->view("admin/_partials/navbar.php") ?>
+	<?php $this->load->view("jurusan/siswa/_partials/navbar.php") ?>
 
-	<?php $this->load->view("admin/_partials/sidebar.php") ?>
+	<?php $this->load->view("jurusan/siswa/_partials/sidebar.php") ?>
 	<div class="mobile-menu-overlay"></div>
 
 	<div class="main-container">
 		<div class="pd-ltr-20 xs-pd-20-10">
 			<div class="min-height-200px">
 				<?php if ($this->session->flashdata('message')) : ?>
-					<?php $this->load->view("admin/_partials/breadcrumb.php") ?>
+					<?php $this->load->view("jurusan/siswa/_partials/breadcrumb.php") ?>
 					<div class="alert alert-success alert-dismissible fade show" role="alert">
 						<?= $this->session->flashdata('message') ?>
 						<button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -41,7 +41,7 @@
 								<h5 class="mb-20 h5 text-blue">Overview</h5>
 								<ul>
 									<li>
-										<span>Nomor Induk:</span>
+										<span>Nomor Induk Yayasan:</span>
 										<?= htmlentities($current_user->nomor_induk) ?>
 									</li>
 									<li>
@@ -88,7 +88,7 @@
 										<!-- Data Pribadi Tab start -->
 										<div class="tab-pane fade show active" id="diri" role="tabpanel">
 											<div class="profile-setting">
-												<form method="POST" enctype="multipart/form-data" action="<?php echo site_url('admin/profile/edit_profile') ?>">
+												<form method="POST" enctype="multipart/form-data" action="<?php echo site_url('jurusan/siswa/profile/edit_profile') ?>">
 													<ul class="profile-edit-list row">
 														<li class="weight-500 col-md-6">
 															<h4 class="text-blue h5 mb-20">Data Pribadi</h4>
@@ -164,7 +164,7 @@
 										<!-- Tasks Tab start -->
 										<div class="tab-pane fade height-100-p" id="password" role="tabpanel">
 											<div class="profile-setting">
-												<form method="POST" enctype="multipart/form-data" action="<?php echo site_url('admin/profile/edit_password') ?>">
+												<form method="POST" enctype="multipart/form-data" action="<?php echo site_url('jurusan/siswa/profile/edit_password') ?>">
 													<ul class="profile-edit-list row">
 														<li class="weight-500 col-md-6">
 															<div class="form-group">
@@ -188,7 +188,7 @@
 										<!-- Setting Tab start -->
 										<div class="tab-pane fade height-100-p" id="avatar" role="tabpanel">
 											<div class="profile-setting">
-												<form method="POST" enctype="multipart/form-data" action="<?php echo site_url('admin/profile/upload_avatar') ?>">
+												<form method="POST" enctype="multipart/form-data" action="<?php echo site_url('jurusan/siswa/profile/upload_avatar') ?>">
 													<ul class="profile-edit-list row">
 														<li class="weight-500 col-md-6">
 															<div class="form-group">
@@ -196,7 +196,7 @@
 															</div>
 															<div>
 																<button type="submit" name="save" class="btn btn-primary">Save Update</button>
-																<a href="<?= site_url('admin/profile/remove_avatar') ?>" class="txt-red">Remove Avatar</a>
+																<a href="<?= site_url('jurusan/siswa/profile/remove_avatar') ?>" class="txt-red">Remove Avatar</a>
 															</div>
 														</li>
 													</ul>
@@ -215,10 +215,10 @@
 		</div>
 	</div>
 	<!-- js -->
-	<?php $this->load->view("admin/_partials/js.php") ?>
+	<?php $this->load->view("jurusan/siswa/_partials/js.php") ?>
 
 	<!-- Logout Modal-->
-	<?php $this->load->view("admin/_partials/modal.php") ?>
+	<?php $this->load->view("jurusan/siswa/_partials/modal.php") ?>
 </body>
 
 </html>

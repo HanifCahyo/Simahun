@@ -26,16 +26,18 @@ class Auth extends CI_Controller
 			return $this->load->view('jurusan/login_page.php');
 		}
 
-		$nis = $this->input->post('nis');
+		$nomor_induk = $this->input->post('nomor_induk');
 		$password = $this->input->post('password');
 
-		if ($this->auth_model->doLoginGuru($nis, $password)) {
+		if ($this->auth_model->doLoginAdmin($nomor_induk, $password)) {
+			redirect('admin');
+		} elseif ($this->auth_model->doLoginGuru($nomor_induk, $password)) {
 			redirect('guru');
-		} elseif ($this->auth_model->doLoginSiswa($nis, $password)) {
+		} elseif ($this->auth_model->doLoginSiswa($nomor_induk, $password)) {
 			redirect('siswa');
 		} else {
 			$this->session->set_flashdata('message_login_error', 'Login Gagal, pastikan NIS dan password benar!');
-			redirect('siswa');
+			redirect('login');
 		}
 
 		$this->load->view('jurusan/login_page.php');

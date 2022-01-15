@@ -48,9 +48,20 @@ class Pengajuan_model extends CI_Model
 
     public function getTable() 
 	{
-		$this->db->select('pengajuan_pkl.*, user.nis, user.name, user.program_studi');
+		$this->db->select('pengajuan_pkl.*, user.nomor_induk, user.name, user.program_studi');
 		$this->db->from('pengajuan_pkl');
-		$this->db->join('user', 'user.nis = pengajuan_pkl.id_user');
+		$this->db->join('user', 'user.nomor_induk = pengajuan_pkl.id_user');
+		$query = $this->db->get();
+		return $query->result();
+	}
+
+    public function getTable2() 
+	{
+        $id = $this->session->userdata('nomor_induk'); // dapatkan id user yg login
+		$this->db->select('pengajuan_pkl.*, user.nomor_induk, user.name, user.program_studi');
+		$this->db->from('pengajuan_pkl');
+		$this->db->join('user', 'user.nomor_induk = pengajuan_pkl.id_user');
+        $this->db->where('user.nomor_induk', $id);
 		$query = $this->db->get();
 		return $query->result();
 	}

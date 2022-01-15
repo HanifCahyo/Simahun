@@ -3,14 +3,14 @@
 class Auth_model extends CI_Model
 {
 	private $_table = "user";
-	const SESSION_KEY = 'nis';
+	const SESSION_KEY = 'nomor_induk';
 
 	public function rules()
 	{
 		return [
 			[
-				'field' => 'nis',
-				'label' => 'nis or Email',
+				'field' => 'nomor_induk',
+				'label' => 'Nomor Induk',
 				'rules' => 'required'
 			],
 			[
@@ -21,43 +21,12 @@ class Auth_model extends CI_Model
 		];
 	}
 
-	public function register_rules()
-	{
-		return [
-			[
-				'field' => 'nis',
-				'label' => 'nis',
-				'rules' => 'required|max_length[64]'
-			],
-			[
-				'field' => 'prodi_keahlian',
-				'label' => 'Program Studi Keahlian',
-				'rules' => 'required|max_length[64]'
-			],
-			[
-				'field' => 'password',
-				'label' => 'New Password',
-				'rules' => 'required'
-			],
-			[
-				'field' => 'password_confirm',
-				'label' => 'Password Confirmation',
-				'rules' => 'required|matches[password]'
-			],
-		];
-	}
-
 	public function profile_rules()
 	{
 		return [
 			[
-				'field' => 'nis',
-				'label' => 'nis',
-				'rules' => 'required|max_length[64]'
-			],
-			[
-				'field' => 'email',
-				'label' => 'Email',
+				'field' => 'name',
+				'label' => 'name',
 				'rules' => 'required|max_length[64]'
 			],
 		];
@@ -67,8 +36,8 @@ class Auth_model extends CI_Model
 	{
 		return [
 			[
-				'field' => 'nis',
-				'label' => 'nis',
+				'field' => 'nomor_induk',
+				'label' => 'nomor_induk',
 				'rules' => 'required|max_length[64]'
 			],
 			[
@@ -101,11 +70,11 @@ class Auth_model extends CI_Model
 		$this->load->database();
 	}
 
-	public function doLoginAdmin($nis, $password)
+	public function doLoginAdmin($nomor_induk, $password)
 	{
 		$post = $this->input->post();
 
-		$this->db->where('email', $nis)->or_where('nis', $nis);
+		$this->db->where('email', $nomor_induk)->or_where('nomor_induk', $nomor_induk);
 		$user = $this->db->get($this->_table)->row();
 
 		// cek apakah user sudah terdaftar?
@@ -119,19 +88,19 @@ class Auth_model extends CI_Model
 
 			if ($isPasswordTrue && $isAdmin) {
 
-				$this->session->set_userdata([self::SESSION_KEY => $user->nis]);
-				$this->_updateLastLogin($user->nis);
+				$this->session->set_userdata([self::SESSION_KEY => $user->nomor_induk]);
+				$this->_updateLastLogin($user->nomor_induk);
 				return $this->session->has_userdata(self::SESSION_KEY);
 			}
 		}
 		return false;
 	}
 
-	public function doLoginGuru($nis, $password)
+	public function doLoginGuru($nomor_induk, $password)
 	{
 		$post = $this->input->post();
 
-		$this->db->where('email', $nis)->or_where('nis', $nis);
+		$this->db->where('email', $nomor_induk)->or_where('nomor_induk', $nomor_induk);
 		$user = $this->db->get($this->_table)->row();
 
 		// cek apakah user sudah terdaftar?
@@ -145,19 +114,19 @@ class Auth_model extends CI_Model
 
             if ($isPasswordTrue && $isGuru) {
 
-                $this->session->set_userdata([self::SESSION_KEY => $user->nis]);
-                $this->_updateLastLogin($user->nis);
+                $this->session->set_userdata([self::SESSION_KEY => $user->nomor_induk]);
+                $this->_updateLastLogin($user->nomor_induk);
                 return $this->session->has_userdata(self::SESSION_KEY);
             }
         }
 		return false;
 	}
 
-	public function doLoginSiswa($nis, $password)
+	public function doLoginSiswa($nomor_induk, $password)
 	{
 		$post = $this->input->post();
 
-		$this->db->where('email', $nis)->or_where('nis', $nis);
+		$this->db->where('email', $nomor_induk)->or_where('nomor_induk', $nomor_induk);
 		$user = $this->db->get($this->_table)->row();
 
 		// cek apakah user sudah terdaftar?
@@ -171,8 +140,8 @@ class Auth_model extends CI_Model
 
             if ($isPasswordTrue && $isSiswa) {
 
-                $this->session->set_userdata([self::SESSION_KEY => $user->nis]);
-                $this->_updateLastLogin($user->nis);
+                $this->session->set_userdata([self::SESSION_KEY => $user->nomor_induk]);
+                $this->_updateLastLogin($user->nomor_induk);
                 return $this->session->has_userdata(self::SESSION_KEY);
             }
         }
@@ -185,22 +154,35 @@ class Auth_model extends CI_Model
 			return null;
 		}
 
-		$nis = $this->session->userdata(self::SESSION_KEY);
-		$query = $this->db->get_where($this->_table, ['nis' => $nis]);
+		$nomor_induk = $this->session->userdata(self::SESSION_KEY);
+		$query = $this->db->get_where($this->_table, ['nomor_induk' => $nomor_induk]);
 		return $query->row();
 	}
 
-	private function _updateLastLogin($nis)
+	private function _updateLastLogin($nomor_induk)
 	{
-		$sql = "UPDATE {$this->_table} SET last_login=now() WHERE nis={$nis}";
+		$sql = "UPDATE {$this->_table} SET last_login=now() WHERE nomor_induk={$nomor_induk}";
 		$this->db->query($sql);
 	}
 
 	public function update($data)
 	{
-		if (!$data['nis']) {
+		if (!$data['nomor_induk']) {
 			return;
 		}
-		return $this->db->update($this->_table, $data, ['nis' => $data['nis']]);
+		return $this->db->update($this->_table, $data, ['nomor_induk' => $data['nomor_induk']]);
 	}
+
+	function prodi_enums($table, $field)
+    {
+        $query = "SHOW COLUMNS FROM " . $table . " LIKE '$field'";
+        $row = $this->db->query("SHOW COLUMNS FROM " . $table . " LIKE '$field'")->row()->Type;
+        $regex = "/'(.*?)'/";
+        preg_match_all($regex, $row, $enum_array);
+        $enum_fields = $enum_array[1];
+        foreach ($enum_fields as $key => $value) {
+            $enums[$value] = $value;
+        }
+        return $enums;
+    }
 }

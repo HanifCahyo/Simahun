@@ -32,18 +32,16 @@
                     <table class="data-table table stripe hover nowrap">
                         <thead>
                             <tr>
-                                <th class="table-plus datatable-nosort">NIS</th>
+                                <th class="table-plus datatable-nosort">Nomor Induk Yayasan</th>
                                 <th>Nama</th>
-                                <th>Program Studi</th>
                                 <th class="datatable-nosort">Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php foreach ($guru as $guru) : ?>
                                 <tr>
-                                    <td class="table-plus"><?php echo $guru->nis ?></td>
+                                    <td class="table-plus"><?php echo $guru->nomor_induk ?></td>
                                     <td><?php echo $guru->name ?></td>
-                                    <td><?php echo $guru->program_studi ?></td>
                                     <td>
                                         <div class="dropdown">
                                             <a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">
@@ -51,8 +49,8 @@
                                             </a>
                                             <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
                                                 <a class="dropdown-item" href="#"><i class="dw dw-eye"></i> View</a>
-                                                <a class="dropdown-item" href="<?php echo site_url('admin/guru/edit/' . $guru->nis) ?>"><i class="dw dw-edit2"></i> Edit</a>
-                                                <a class="dropdown-item" onclick="deleteConfirm('<?php echo site_url('admin/guru/delete/' . $guru->nis) ?>')" href="#!"><i class="dw dw-delete-3"></i> Delete</a>
+                                                <a class="dropdown-item" href="<?php echo site_url('admin/guru/edit/' . $guru->nomor_induk) ?>"><i class="dw dw-edit2"></i> Edit</a>
+                                                <a class="dropdown-item" onclick="deleteConfirm('<?php echo site_url('admin/guru/delete/' . $guru->nomor_induk) ?>')" href="#!"><i class="dw dw-delete-3"></i> Delete</a>
                                             </div>
                                         </div>
                                     </td>

@@ -21,7 +21,7 @@
 
                 <!-- Simple Datatable start -->
                 <div class="card-box mb-30">
-                <?php if ($this->session->flashdata('message')) : ?>
+                    <?php if ($this->session->flashdata('message')) : ?>
                         <div class="alert alert-success alert-dismissible fade show" role="alert">
                             <?= $this->session->flashdata('message') ?>
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -32,19 +32,16 @@
                     <table class="data-table table stripe hover nowrap">
                         <thead>
                             <tr>
-
-                                <th class="table-plus datatable-nosort">NIS</th>
+                                <th class="table-plus datatable-nosort">Nomor Induk Siswa</th>
                                 <th>Nama</th>
-                                <th>Jurusan</th>
                                 <th class="datatable-nosort">Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                        <?php foreach ($siswa as $siswa) : ?>
+                            <?php foreach ($siswa as $siswa) : ?>
                                 <tr>
-                                    <td class="table-plus"><?php echo $siswa->nis ?></td>
+                                    <td class="table-plus"><?php echo $siswa->nomor_induk ?></td>
                                     <td><?php echo $siswa->name ?></td>
-                                    <td><?php echo $siswa->program_studi ?></td>
                                     <td>
                                         <div class="dropdown">
                                             <a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">
@@ -52,8 +49,8 @@
                                             </a>
                                             <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
                                                 <a class="dropdown-item" href="#"><i class="dw dw-eye"></i> View</a>
-                                                <a class="dropdown-item" href="<?php echo site_url('admin/siswa/edit/' . $siswa->nis) ?>"><i class="dw dw-edit2"></i> Edit</a>
-                                                <a class="dropdown-item" onclick="deleteConfirm('<?php echo site_url('admin/siswa/delete/' . $siswa->nis) ?>')" href="#!"><i class="dw dw-delete-3"></i> Delete</a>
+                                                <a class="dropdown-item" href="<?php echo site_url('admin/siswa/edit/' . $siswa->nomor_induk) ?>"><i class="dw dw-edit2"></i> Edit</a>
+                                                <a class="dropdown-item" onclick="deleteConfirm('<?php echo site_url('admin/siswa/delete/' . $siswa->nomor_induk) ?>')" href="#!"><i class="dw dw-delete-3"></i> Delete</a>
                                             </div>
                                         </div>
                                     </td>

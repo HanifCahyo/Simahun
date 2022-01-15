@@ -7,7 +7,7 @@ class Profile extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->model("auth_model");
-		$this->load->model("guru_model");
+		$this->load->model("siswa_model");
 		if (!$this->auth_model->current_user()) {
 			redirect('login');
 		}
@@ -18,7 +18,7 @@ class Profile extends CI_Controller
 		$data['current_user'] = $this->auth_model->current_user();
 		$data['program_studi']=$this->auth_model->prodi_enums('user','program_studi');
 		$data['status']=$this->auth_model->prodi_enums('user','status');
-		$this->load->view("admin/profile", $data);
+		$this->load->view("jurusan/siswa/profile", $data);
 	}
 
 	public function upload_avatar()
@@ -51,12 +51,12 @@ class Profile extends CI_Controller
 
 				if ($this->auth_model->update($new_data)) {
 					$this->session->set_flashdata('message', 'Avatar updated!');
-					redirect(site_url('admin/profile'));
+					redirect(site_url('jurusan/siswa/profile'));
 				}
 			}
 		}
 
-		$this->load->view('admin/profile', $data);
+		$this->load->view('jurusan/siswa/profile', $data);
 	}
 
 	public function remove_avatar()
@@ -76,7 +76,7 @@ class Profile extends CI_Controller
 
 		if ($this->auth_model->update($new_data)) {
 			$this->session->set_flashdata('message', 'Avatar dihapus!');
-			redirect(site_url('admin/profile'));
+			redirect(site_url('jurusan/siswa/profile'));
 		}
 	}
 
@@ -84,7 +84,7 @@ class Profile extends CI_Controller
 	{
 		$this->load->library('form_validation');
 		$this->load->model('auth_model');
-		$this->load->model('guru_model');
+		$this->load->model('siswa_model');
 
 		$data['current_user'] = $this->auth_model->current_user();
 
@@ -93,7 +93,7 @@ class Profile extends CI_Controller
 			$this->form_validation->set_rules($rules);
 
 			if ($this->form_validation->run() === FALSE) {
-				return $this->load->view('admin/profile', $data);
+				return $this->load->view('jurusan/siswa/profile', $data);
 			}
 
 			$new_data = [
@@ -109,13 +109,13 @@ class Profile extends CI_Controller
 
 			if ($this->auth_model->update($new_data)) {
 				$this->session->set_flashdata('message', 'Profile was updated');
-				redirect(site_url('admin/profile'));
+				redirect(site_url('jurusan/siswa/profile'));
 			}
 		}
 
 		$data['program_studi']=$this->auth_model->prodi_enums('user','program_studi');
 		$data['status']=$this->auth_model->prodi_enums('user','status');
-		$this->load->view('admin/profile', $data);
+		$this->load->view('jurusan/siswa/profile', $data);
 	}
 
 	public function edit_password()
@@ -129,7 +129,7 @@ class Profile extends CI_Controller
 			$this->form_validation->set_rules($rules);
 
 			if ($this->form_validation->run() === FALSE) {
-				return $this->load->view('admin/profile', $data);
+				return $this->load->view('jurusan/siswa/profile', $data);
 			}
 
 			$new_password_data = [
@@ -139,7 +139,7 @@ class Profile extends CI_Controller
 
 			if ($this->auth_model->update($new_password_data)) {
 				$this->session->set_flashdata('message', 'Password was changed');
-				redirect(site_url('admin/profile'));
+				redirect(site_url('jurusan/siswa/profile'));
 			}
 		}
 	}

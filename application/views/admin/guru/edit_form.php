@@ -30,37 +30,27 @@
                     </div> -->
 
                     <form action="" method="post" enctype="multipart/form-data">
-                        <input type="hidden" name="nis" value="<?php echo $guru->nis ?>" />
+                        <div class="form-group row">
+                            <label class="col-sm-12 col-md-2 col-form-label">Nomor Induk Yayasan</label>
+                            <div class="col-sm-12 col-md-10">
+                                <input class="form-control" type="number" placeholder="" name="nomor_induk" value="<?php echo $guru->nomor_induk ?>">
+                            </div>
+                        </div>
                         <div class="form-group row">
                             <label class="col-sm-12 col-md-2 col-form-label">Nama Lengkap</label>
                             <div class="col-sm-12 col-md-10">
-                                <input class="form-control <?php echo form_error('name') ? 'is-invalid' : '' ?>" type="text" placeholder="" name="name" value="<?php echo $guru->name ?>">
-                            </div>
-                            <div class="invalid-feedback">
-                                <?php echo form_error('name') ?>
+                                <input class="form-control" type="text" placeholder="" name="name" value="<?php echo $guru->name ?>">
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label class="col-sm-12 col-md-2 col-form-label">Jurusan</label>
+                            <label class="col-sm-12 col-md-2 col-form-label">Password</label>
                             <div class="col-sm-12 col-md-10">
-                                <select class="custom-select col-12" name="program_studi" class="form-control <?php echo form_error('program_studi') ? 'is-invalid' : '' ?>">
-                                    <option selected=""><?php echo $guru->program_studi ?></option>
-                                    <?php 
-                                    $array = array_values($program_studi);
-                                    foreach($array as $l) { 
-                                    echo "<option value='$l'>$l</option>";
-                                    }
-                                    ?>
-                                </select>
-                                <div class="invalid-feedback">
-                                    <?php echo form_error('program_studi') ?>
-                                </div>
+                                <input class="form-control" type="password" placeholder="" name="password" value="">
                             </div>
                         </div>
-
                         <div class="form-group row">
                             <div class="col-sm-12 col-md-10">
-                                <input class="btn btn-success" type="submit" value="Daftar" />
+                                <input class="btn btn-success" type="submit" value="Simpan" />
                             </div>
                         </div>
 
@@ -75,6 +65,9 @@
     </div>
 
     <?php $this->load->view("admin/_partials/js.php") ?>
+
+    <!-- Logout Modal-->
+    <?php $this->load->view("admin/_partials/modal.php") ?>
 
     <!-- add sweet alert js & css in footer -->
     <script src="src/plugins/sweetalert2/sweetalert2.all.js"></script>

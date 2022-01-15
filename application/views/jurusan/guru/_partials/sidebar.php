@@ -76,8 +76,8 @@
 <div class="left-side-bar">
     <div class="brand-logo">
         <a href="index.html">
-            <img src="<?php echo base_url('assets_deskapp/vendors/images/deskapp-logo.svg')?>" alt="" class="dark-logo">
-            <img src="<?php echo base_url('assets_deskapp/vendors/images/deskapp-logo-white.svg')?>" alt="" class="light-logo">
+            <img src="<?php echo base_url('assets_deskapp/vendors/images/deskapp-logo.svg') ?>" alt="" class="dark-logo">
+            <img src="<?php echo base_url('assets_deskapp/vendors/images/deskapp-logo-white.svg') ?>" alt="" class="light-logo">
         </a>
         <div class="close-sidebar" data-toggle="left-sidebar-close">
             <i class="ion-close-round"></i>
@@ -96,6 +96,14 @@
                 </li>
                 <li class="dropdown">
                     <a href="javascript:;" class="dropdown-toggle">
+                        <span class="micon dw dw-calendar"></span><span class="mtext">PKL</span>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href=<?php echo site_url('jurusan/guru/bimbingan/') ?>>Monitoring Kegiatan Siswa</a></li>
+                    </ul>
+                </li>
+                <!-- <li class="dropdown">
+                    <a href="javascript:;" class="dropdown-toggle">
                         <span class="micon dw dw-edit2"></span><span class="mtext">Forms</span>
                     </a>
                     <ul class="submenu">
@@ -103,7 +111,7 @@
                         <li><a href=<?php echo site_url('jurusan/guru/Cetak_lembarmonitoring/') ?>>Cetak Lembar Monitoring</a></li>
                         <li><a href="<?php echo site_url('jurusan/guru/Cetak_penarikan/') ?>">Cetak Penarikan PKL</a></li>
                         <li><a href="<?php echo site_url('jurusan/guru/Cetak_sertifikat/') ?>">Cetak Sertifikat PKL</a></li>
-                        
+
                     </ul>
                 </li>
                 <li class="dropdown">
@@ -111,9 +119,10 @@
                         <span class="micon dw dw-table"></span><span class="mtext">List Tables</span>
                     </a>
                     <ul class="submenu">
-                     <li><a href="<?php echo site_url('jurusan/guru/List_pengajuan/') ?>">List Pengajuan PKL</a></li>
-                    <li><a href="<?php echo site_url('jurusan/guru/List_monitoring/') ?>">List Cetak Lembar Monitoring</a></li>
+                        <li><a href="<?php echo site_url('jurusan/guru/List_pengajuan/') ?>">List Pengajuan PKL</a></li>
+                        <li><a href="<?php echo site_url('jurusan/guru/List_monitoring/') ?>">List Cetak Lembar Monitoring</a></li>
                     </ul>
+                </li>     -->
             </ul>
         </div>
     </div>

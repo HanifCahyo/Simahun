@@ -38,7 +38,7 @@
 				<div class="pd-20 card-box mb-30">
 					<div class="clearfix mb-20">
 						<div class="pull-left">
-							<h4 class="text-blue h4">List Pengajuan</h4>
+							<h4 class="text-blue h4">List </h4>
 						</div>
 					</div>
 					<?php if ($this->session->flashdata('msg_success')) : ?>
@@ -47,35 +47,31 @@
 					<?php endif ?>
 					<table class="table table-striped">
 						<thead>
-							<tr>
-								<th scope="col">NIS</th>
+						<tr>
+								<th scope="col">Nomor Induk Siswa</th>
 								<th scope="col">Nama</th>
-								<th scope="col">Jurusan</th>
-								<th scope="col">Tempat PKL</th>
-								<!-- <th scope="col">Status</th> -->
+								<th scope="col">Status</th>
 								<th scope="col">Action</th>
 							</tr>
 						</thead>
 						<tbody>
-							<?php
+						<?php
 							$no = 1;
-							foreach ($pengajuan_pkl as $aaa) :
+							foreach ($bimbingan as $aaa) :
 							?>
 								<tr>
 									<th scope="row"><?php echo $aaa->nomor_induk ?></th>
 									<td><?php echo $aaa->name ?></td>
-									<td><?php echo $aaa->program_studi ?></td>
-									<td><?php echo $aaa->nama_perusahaan ?></td>
-									<!-- <td><span class="badge badge-secondary">Secondary</span></td> -->
+									<td><?php echo $aaa->status ?></td>
 									<td>
 										<div class="dropdown">
 											<a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">
 												<i class="dw dw-more"></i>
 											</a>
 											<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-												<a class="dropdown-item" href="#"><i class="dw dw-eye"></i> View</a>
-												<a class="dropdown-item" href="<?php echo site_url('jurusan/guru/list_pengajuan/edit/' . $aaa->id) ?>"><i class="dw dw-edit2"></i> Edit</a>
-												<a class="dropdown-item" onclick="deleteConfirm('<?php echo site_url('jurusan/guru/list_pengajuan/delete/' . $aaa->id) ?>')" href="#!"><i class="dw dw-delete-3"></i> Delete</a>
+												<a class="dropdown-item" href="<?php echo site_url('jurusan/guru/bimbingan/detail/' . $aaa->nomor_induk) ?>"><i class="dw dw-eye"></i> View</a>
+												<a class="dropdown-item" href="#"><i class="dw dw-edit2"></i> Edit</a>
+												<a class="dropdown-item" onclick="deleteConfirm('')" href="#!"><i class="dw dw-delete-3"></i> Delete</a>
 												<a class="dropdown-item" href="#"><i class="dw dw-print"></i> Print</a>
 											</div>
 										</div>
@@ -95,7 +91,8 @@
 	<!-- js -->
 	<?php $this->load->view("jurusan/guru/_partials/js.php") ?>
 
-	<?php $this->load->view("admin/_partials/modal.php") ?>
+	<!-- Logout Modal-->
+	<?php $this->load->view("jurusan/guru/_partials/modal.php") ?>
 
 	<script>
 		function deleteConfirm(url) {

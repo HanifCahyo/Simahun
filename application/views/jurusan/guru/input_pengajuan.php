@@ -76,7 +76,7 @@
 								<input class="form-control" type="text" name="kelas">
 							</div>
 						</div>
-						<input type="hidden" name="id_user" value="<?= $current_user->nis ?>" />
+						<input type="hidden" name="id_user" value="<?= $current_user->nomor_induk ?>" />
 						<div class="form-group row">
 							<div class="col-sm-12 col-md-10">
 								<input class="btn btn-success" type="submit" value="INPUT PERMOHONAN DATA SISWA PKL" />

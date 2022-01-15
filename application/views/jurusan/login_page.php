@@ -67,12 +67,12 @@
 						<form action="<?php echo site_url('jurusan/auth/login') ?>" method="post">
 
 							<div class="input-group custom">
-								<input type="username" class="form-control form-control-lg <?= form_error('nis') ? 'invalid' : '' ?>" placeholder="NIS" name="nis" value="<?= set_value('nis') ?>" required>
+								<input type="username" class="form-control form-control-lg <?= form_error('nomor_induk') ? 'invalid' : '' ?>" placeholder="Masukan NIS / NIY" name="nomor_induk" value="<?= set_value('nomor_induk') ?>" required>
 								<div class="input-group-append custom">
 									<span class="input-group-text"><i class="icon-copy dw dw-user1"></i></span>
 								</div>
 								<div class="invalid-feedback">
-									<?= form_error('nis') ?>
+									<?= form_error('nomor_induk') ?>
 								</div>
 							</div>
 							<div class="input-group custom">

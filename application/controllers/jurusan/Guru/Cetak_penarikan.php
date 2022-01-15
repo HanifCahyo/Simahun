@@ -17,4 +17,10 @@ class Cetak_penarikan extends CI_Controller
 		$this->load->view("jurusan/guru/cetak_penarikan", $data);
 	}
 
+	public function add()
+	{
+		$data['current_user'] = $this->auth_model->current_user();
+		$this->load->view("jurusan/guru/penarikan/cetak_penarikan", $data);
+	}
+
 }

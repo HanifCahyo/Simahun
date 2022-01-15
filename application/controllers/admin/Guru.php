@@ -25,25 +25,37 @@ class Guru extends CI_Controller
 
 	public function edit($id = null)
 	{
-		if (!isset($id)) redirect('admin/guru');
 
-		$auth = $this->auth_model;
 		$guru = $this->guru_model;
-		$validation = $this->form_validation;
-		$validation->set_rules($auth->guru_rules());
+		$this->load->library('form_validation');
+		$this->load->model('auth_model');
+		$this->load->model('guru_model');
+		$data['current_user'] = $this->auth_model->current_user();
 
-		if ($validation->run()) {
-            $guru->update();
-            $this->session->set_flashdata('success', 'Berhasil disimpan');
-			redirect('admin/guru');
-        }
+		if ($this->input->method() === 'post') {
+			$rules = $this->auth_model->guru_rules();
+			$this->form_validation->set_rules($rules);
+
+			if ($this->form_validation->run() === FALSE) {
+				return $this->load->view('admin/guru/edit_form', $data);
+			}
+
+			$new_password_data = [
+				'nomor_induk' => $this->input->post('nomor_induk'),
+				'name' => $this->input->post('name'),
+				'password' => password_hash($this->input->post('password'), PASSWORD_DEFAULT),
+			];
+
+			if ($this->auth_model->update($new_password_data)) {
+				$this->session->set_flashdata('message', 'Berhasil disimpan');
+				redirect(site_url('admin/guru'));
+			}
+		}
 
 		$data["guru"] = $guru->getById($id);
         if (!$data["guru"]) show_404();
 		
-		$data['program_studi']=$this->guru_model->prodi_enums('user','program_studi');
-		$data['current_user'] = $this->auth_model->current_user();
-		$this->load->view("admin/guru/edit_form", $data);
+		$this->load->view('admin/guru/edit_form', $data);
 	}
 
 	public function delete($id=null)
