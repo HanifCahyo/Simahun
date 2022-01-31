@@ -20,7 +20,7 @@ class Kegiatan extends CI_Controller
 		$this->load->view("jurusan/siswa/kegiatan/list", $data);	
 	}
 
-	public function tambah()
+	public function add()
 	{
 		$kegiatan = $this->kegiatan_model;
 		$validation = $this->form_validation;
@@ -28,11 +28,12 @@ class Kegiatan extends CI_Controller
 
 		if ($validation->run()) {
             $kegiatan->save();
-            $this->session->set_flashdata('message', 'Data sudah tersimpan');
+            $this->session->set_flashdata('message', 'Data berhasil tersimpan');
+			redirect(site_url('jurusan/siswa/kegiatan/list'));
         }
 
 		$data['current_user'] = $this->auth_model->current_user();
-		$this->load->view("jurusan/siswa/kegiatan/tambah", $data);
+		$this->load->view("jurusan/siswa/kegiatan/add", $data);
 	}
 
 	public function edit($id = null)
@@ -46,6 +47,7 @@ class Kegiatan extends CI_Controller
 		if ($validation->run()) {
             $kegiatan->update();
             $this->session->set_flashdata('message', 'Data berhasil tersimpan');
+			redirect(site_url('jurusan/siswa/kegiatan/list'));
         }
 
 		$data["kegiatan"] = $kegiatan->getById($id);

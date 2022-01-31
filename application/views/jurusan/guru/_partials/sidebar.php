@@ -102,27 +102,20 @@
                         <li><a href=<?php echo site_url('jurusan/guru/bimbingan/') ?>>Monitoring Kegiatan Siswa</a></li>
                     </ul>
                 </li>
-                <!-- <li class="dropdown">
-                    <a href="javascript:;" class="dropdown-toggle">
-                        <span class="micon dw dw-edit2"></span><span class="mtext">Forms</span>
-                    </a>
-                    <ul class="submenu">
-                        <li><a href=<?php echo site_url('jurusan/guru/Input_pengajuan/') ?>>Input Pengajuan PKL</a></li>
-                        <li><a href=<?php echo site_url('jurusan/guru/Cetak_lembarmonitoring/') ?>>Cetak Lembar Monitoring</a></li>
-                        <li><a href="<?php echo site_url('jurusan/guru/Cetak_penarikan/') ?>">Cetak Penarikan PKL</a></li>
-                        <li><a href="<?php echo site_url('jurusan/guru/Cetak_sertifikat/') ?>">Cetak Sertifikat PKL</a></li>
-
-                    </ul>
-                </li>
                 <li class="dropdown">
                     <a href="javascript:;" class="dropdown-toggle">
-                        <span class="micon dw dw-table"></span><span class="mtext">List Tables</span>
+                        <span class="micon dw dw-print"></span><span class="mtext">Hubungan Industri</span>
                     </a>
                     <ul class="submenu">
-                        <li><a href="<?php echo site_url('jurusan/guru/List_pengajuan/') ?>">List Pengajuan PKL</a></li>
-                        <li><a href="<?php echo site_url('jurusan/guru/List_monitoring/') ?>">List Cetak Lembar Monitoring</a></li>
+                        <li><a href=<?php echo site_url('jurusan/guru/pengajuan') ?>>Cetak Pengajuan PKL</a></li>
                     </ul>
-                </li>     -->
+                    <ul class="submenu">
+                        <li><a href=<?php echo site_url('jurusan/guru/penarikan') ?>>Cetak Penarikan PKL</a></li>
+                    </ul>
+                    <ul class="submenu">
+                        <li><a href='#'>Cetak Sertifikat PKL</a></li>
+                    </ul>
+                </li>
             </ul>
         </div>
     </div>

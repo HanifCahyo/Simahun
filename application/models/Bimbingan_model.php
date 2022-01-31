@@ -22,15 +22,6 @@ class Bimbingan_model extends CI_Model
         ];
     }
 
-    // public function getTable() 
-    // {
-    // 	$this->db->select('pengajuan_pkl.*, user.nomor_induk, user.name, user.program_studi');
-    // 	$this->db->from('pengajuan_pkl');
-    // 	$this->db->join('user', 'user.nomor_induk = pengajuan_pkl.id_user');
-    // 	$query = $this->db->get();
-    // 	return $query->result();
-    // }
-
     public function getById($id)
     {
         return $this->db->get_where($this->_table, ["id" => $id])->row();
@@ -70,8 +61,15 @@ class Bimbingan_model extends CI_Model
 		return $query->result();
 	}
 
-    public function update2()
-    {
-        
-    }
+    public function getTable2() 
+	{
+        $id = $this->session->userdata('nomor_induk'); // dapatkan id user yg login
+        $this->db->select('*');
+		$this->db->from('bimbingan');       
+		$this->db->join('user', 'user.nomor_induk =  bimbingan.niy', 'left');
+        $this->db->where('bimbingan.nis', $id);
+		$query = $this->db->get();
+		return $query->result();
+	}
+
 }

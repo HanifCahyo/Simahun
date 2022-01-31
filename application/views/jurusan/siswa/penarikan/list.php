@@ -45,14 +45,16 @@
 					<div class="clearfix mb-20">
 						<div class="pull-left">
 						</div>
-						<?php if ($this->session->flashdata('msg_success')) : ?>
-							<div class="alert alert-success alert-dismissible fade show" role="alert"><?php echo $this->session->flashdata('msg_success') ?>
+						<?php if ($this->session->flashdata('message')) : ?>
+							<div class="alert alert-success alert-dismissible fade show" role="alert"><?php echo $this->session->flashdata('message') ?>
+							<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
 							</div>
 						<?php endif ?>
 						<table class="table table-striped">
 							<thead>
 								<tr>
-									<th>Nomor Induk Siswa</th>
 									<th>Nama Perusahaan</th>
 									<th>Alamat Perusahaan</th>
 									<th>Tanggal Penarikan</th>
@@ -65,7 +67,6 @@
 								foreach ($penarikan as $aaa) :
 								?>
 									<tr>
-										<td class="table-plus"><?php echo $aaa->nis ?></td>
 										<td class="table-plus"><?php echo $aaa->nama_perusahaan?></td>
 										<td><?php echo $aaa->alamat_perusahaan ?></td>
 										<td><?php echo $aaa->tanggal_penarikan ?></td>
@@ -75,9 +76,9 @@
 													<i class="dw dw-more"></i>
 												</a>
 												<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-													<a class="dropdown-item" href="#"><i class="dw dw-eye"></i> View</a>
-													<a class="dropdown-item" href="#"><i class="dw dw-edit2"></i> Edit</a>
-													<a class="dropdown-item" href="#!"><i class="dw dw-delete-3"></i> Delete</a>
+													<a class="dropdown-item" href="<?php echo site_url('jurusan/siswa/penarikan/print/' . $aaa->id) ?>"><i class="dw dw-print"></i> Print</a>
+													<a class="dropdown-item" href="<?php echo site_url('jurusan/siswa/penarikan/edit/' . $aaa->id) ?>"><i class="dw dw-edit2"></i> Edit</a>
+													<a class="dropdown-item" onclick="deleteConfirm('<?php echo site_url('jurusan/siswa/penarikan/delete/' . $aaa->id) ?>')" href="#!"><i class="dw dw-delete-3"></i> Delete</a>
 												</div>
 											</div>
 										</td>

@@ -38,7 +38,7 @@
 							<h5 class="text-center h5 mb-0"><?= htmlentities($current_user->name) ?></h5>
 							<p class="text-center text-muted font-14"><?= htmlentities($current_user->role) ?></p>
 							<div class="profile-info">
-								<h5 class="mb-20 h5 text-blue">Overview</h5>
+								<!-- <h5 class="mb-20 h5 text-blue">Overview</h5>
 								<ul>
 									<li>
 										<span>Nomor Induk Yayasan:</span>
@@ -64,7 +64,7 @@
 										<span>Status:</span>
 										<?= htmlentities($current_user->status) ?>
 									</li>
-								</ul>
+								</ul> -->
 							</div>
 						</div>
 					</div>
@@ -122,7 +122,7 @@
 																</div>
 															</div>
 															<div>
-																<button type="submit" name="save" class="btn btn-primary">Save Update</button>
+																<button type="submit" name="save" class="btn btn-primary">Simpan</button>
 															</div>
 														</li>
 														<li class="weight-500 col-md-6">
@@ -139,7 +139,7 @@
 																	?>
 																</select>
 															</div>
-															<div class="form-group">
+															<!-- <div class="form-group">
 																<label>Status PKL</label>
 																<select class="selectpicker form-control form-control-lg" name="status" data-style="btn-outline-secondary btn-lg" title="Not Chosen">
 																	<option selected=""><?= $current_user->status ?></option>
@@ -150,9 +150,9 @@
 																	}
 																	?>
 																</select>
-															</div>
+															</div> -->
 															<div class="form-group mb-0">
-																<input type="submit" class="btn btn-primary" value="Save & Update">
+																<input type="submit" class="btn btn-primary" value="Simpan">
 															</div>
 														</li>
 													</ul>
@@ -176,7 +176,7 @@
 																<input class="form-control form-control-lg" type="password" name="password_confirm" value="" required>
 															</div>
 															<div>
-																<button type="submit" name="save" class="btn btn-primary">Save Update</button>
+																<button type="submit" name="save" class="btn btn-primary">Simpan</button>
 															</div>
 														</li>
 													</ul>
@@ -195,8 +195,8 @@
 																<input class="form-control form-control-lg" type="file" name="avatar">
 															</div>
 															<div>
-																<button type="submit" name="save" class="btn btn-primary">Save Update</button>
-																<a href="<?= site_url('jurusan/guru/profile/remove_avatar') ?>" class="txt-red">Remove Avatar</a>
+																<button type="submit" name="save" class="btn btn-primary">Simpan</button>
+																<a href="<?= site_url('jurusan/guru/profile/remove_avatar') ?>" class="btn btn-danger">Hapus Avatar</a>
 															</div>
 														</li>
 													</ul>

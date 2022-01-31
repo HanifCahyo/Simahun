@@ -99,10 +99,7 @@
                         <span class="micon dw dw-calendar"></span><span class="mtext">PKL</span>
                     </a>
                     <ul class="submenu">
-                        <li><a href=<?php echo site_url('jurusan/siswa/bimbingan/simpanData') ?>>Tambahkan Guru Pembimbing</a></li>
-                    </ul>
-                    <ul class="submenu">
-                        <li><a href=<?php echo site_url('jurusan/siswa/kegiatan/tambah') ?>>Tambahkan Kegiatan PKL</a></li>
+                        <li><a href=<?php echo site_url('jurusan/siswa/bimbingan/') ?>>Guru Pembimbing</a></li>
                     </ul>
                     <ul class="submenu">
                         <li><a href=<?php echo site_url('jurusan/siswa/kegiatan/list') ?>>Monitoring Kegiatan Siswa</a></li>
@@ -113,7 +110,7 @@
                         <span class="micon dw dw-print"></span><span class="mtext">Hubungan Industri</span>
                     </a>
                     <ul class="submenu">
-                        <li><a href='#'>Tambahkan Pengajuan PKL</a></li>
+                        <li><a href=<?php echo site_url('jurusan/siswa/pengajuan') ?>>Cetak Pengajuan PKL</a></li>
                     </ul>
                     <ul class="submenu">
                         <li><a href=<?php echo site_url('jurusan/siswa/penarikan') ?>>Cetak Penarikan PKL</a></li>

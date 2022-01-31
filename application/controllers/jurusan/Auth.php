@@ -36,7 +36,7 @@ class Auth extends CI_Controller
 		} elseif ($this->auth_model->doLoginSiswa($nomor_induk, $password)) {
 			redirect('siswa');
 		} else {
-			$this->session->set_flashdata('message_login_error', 'Login Gagal, pastikan NIS dan password benar!');
+			$this->session->set_flashdata('message_login_error', 'Login Gagal, pastikan Username dan password benar!');
 			redirect('login');
 		}
 

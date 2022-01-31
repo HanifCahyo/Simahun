@@ -38,7 +38,7 @@
 							<h5 class="text-center h5 mb-0"><?= htmlentities($current_user->name) ?></h5>
 							<p class="text-center text-muted font-14"><?= htmlentities($current_user->role) ?></p>
 							<div class="profile-info">
-								<h5 class="mb-20 h5 text-blue">Overview</h5>
+								<!-- <h5 class="mb-20 h5 text-blue">Overview</h5>
 								<ul>
 									<li>
 										<span>Nomor Induk:</span>
@@ -64,7 +64,7 @@
 										<span>Status:</span>
 										<?= htmlentities($current_user->status) ?>
 									</li>
-								</ul>
+								</ul> -->
 							</div>
 						</div>
 					</div>
@@ -139,7 +139,7 @@
 																	?>
 																</select>
 															</div>
-															<div class="form-group">
+															<!-- <div class="form-group">
 																<label>Status PKL</label>
 																<select class="selectpicker form-control form-control-lg" name="status" data-style="btn-outline-secondary btn-lg" title="Not Chosen">
 																	<option selected=""><?= $current_user->status ?></option>
@@ -150,7 +150,7 @@
 																	}
 																	?>
 																</select>
-															</div>
+															</div> -->
 															<div class="form-group mb-0">
 																<input type="submit" class="btn btn-primary" value="Save & Update">
 															</div>

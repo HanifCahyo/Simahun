@@ -50,7 +50,7 @@ class Pengajuan_model extends CI_Model
 	{
 		$this->db->select('pengajuan_pkl.*, user.nomor_induk, user.name, user.program_studi');
 		$this->db->from('pengajuan_pkl');
-		$this->db->join('user', 'user.nomor_induk = pengajuan_pkl.id_user');
+		$this->db->join('user', 'user.nomor_induk = pengajuan_pkl.nis');
 		$query = $this->db->get();
 		return $query->result();
 	}
@@ -60,7 +60,7 @@ class Pengajuan_model extends CI_Model
         $id = $this->session->userdata('nomor_induk'); // dapatkan id user yg login
 		$this->db->select('pengajuan_pkl.*, user.nomor_induk, user.name, user.program_studi');
 		$this->db->from('pengajuan_pkl');
-		$this->db->join('user', 'user.nomor_induk = pengajuan_pkl.id_user');
+		$this->db->join('user', 'user.nomor_induk = pengajuan_pkl.nis');
         $this->db->where('user.nomor_induk', $id);
 		$query = $this->db->get();
 		return $query->result();
@@ -86,7 +86,7 @@ class Pengajuan_model extends CI_Model
         $this->bidang_usaha = $post["bidang_usaha"];
 		$this->periode_pkl = $post["periode_pkl"];
 		$this->kelas = $post["kelas"];
-		$this->id_user = $post["id_user"];
+		$this->nis = $post["nis"];
         return $this->db->insert($this->_table, $this);
     }
 
@@ -100,7 +100,7 @@ class Pengajuan_model extends CI_Model
         $this->bidang_usaha = $post["bidang_usaha"];
 		$this->periode_pkl = $post["periode_pkl"];
 		$this->kelas = $post["kelas"];
-		$this->id_user = $post["id_user"];
+		$this->nis = $post["nis"];
         return $this->db->update($this->_table, $this, array('id' => $post['id']));
     }
 

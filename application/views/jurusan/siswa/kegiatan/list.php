@@ -21,16 +21,22 @@
 					<div class="row">
 						<div class="col-md-6 col-sm-12">
 							<div class="title">
-								<h4>List Pekerjaan Siswa</h4>
+								<h4>Monitoring Kegiatan Siswa</h4>
 							</div>
 							<nav aria-label="breadcrumb" role="navigation">
 								<ol class="breadcrumb">
 									<li class="breadcrumb-item"><a href="<?php echo site_url('jurusan/siswa/Dashboard/') ?>">Home</a></li>
-									<li class="breadcrumb-item active" aria-current="page">List Pekerjaan Siswa</li>
+									<li class="breadcrumb-item active" aria-current="page">Monitoring Kegiatan Siswa</li>
 								</ol>
 							</nav>
 						</div>
-
+						<div class="col-md-6 col-sm-12 text-right">
+							<div class="dropdown">
+								<a class="btn btn-primary" href="<?php echo site_url('jurusan/siswa/kegiatan/add') ?>" role="button">
+									Tambahkan Baru
+								</a>
+							</div>
+						</div>
 					</div>
 				</div>
 				<!-- Bordered table End -->
@@ -39,19 +45,22 @@
 					<div class="clearfix mb-20">
 						<div class="pull-left">
 						</div>
-						<?php if ($this->session->flashdata('msg_success')) : ?>
-							<div class="alert alert-success alert-dismissible fade show" role="alert"><?php echo $this->session->flashdata('msg_success') ?>
+						<?php if ($this->session->flashdata('message')) : ?>
+							<div class="alert alert-success alert-dismissible fade show" role="alert"><?php echo $this->session->flashdata('message') ?>
+							<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
 							</div>
 						<?php endif ?>
 						<table class="table table-striped">
 							<thead>
 								<tr>
-									<th>NIS</th>
+									<th>No</th>
 									<th>Nama Kegiatan</th>
-									<th>Tanggal Kegiatan</th>
-									<th>Image</th>
+									<th>Tanggal</th>
+									<!-- <th>Image</th> -->
 									<th>Validasi</th>
-									<th class="datatable-nosort">Action</th>
+									<th class="datatable-nosort">Aksi</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -60,13 +69,13 @@
 								foreach ($kegiatan as $aaa) :
 								?>
 									<tr>
-										<td class="table-plus"><?php echo $aaa->nis ?></td>
+										<td class="table-plus"><?php echo $no++ ?></td>
 										<td class="table-plus"><?php echo $aaa->nama_kegiatan ?></td>
 										<td><?php echo $aaa->tanggal_kegiatan ?></td>
-										<td>
+										<!-- <td>
 											<img src="<?php echo base_url('upload/kegiatan/' . $aaa->image) ?>" width="64" />
-										</td>
-										<td><?php echo $aaa->validasi ?></td>
+										</td> -->
+										<td><span class="badge badge-success"><?php echo $aaa->validasi ?></td>
 										<td>
 											<div class="dropdown">
 												<a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">

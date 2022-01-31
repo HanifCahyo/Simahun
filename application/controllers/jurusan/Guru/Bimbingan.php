@@ -19,7 +19,7 @@ class Bimbingan extends CI_Controller
 	{
 		$data["bimbingan"] = $this->bimbingan_model->getTable();
 		$data['current_user'] = $this->auth_model->current_user();
-		$this->load->view("jurusan/guru/bimbingan/list_bimbingan", $data);
+		$this->load->view("jurusan/guru/bimbingan/list", $data);
 	}
 
 	public function detail($id)
@@ -49,6 +49,22 @@ class Bimbingan extends CI_Controller
 
         $this->load->view("jurusan/guru/kegiatan/edit", $data);
 	}
-	
 
+	public function checked($nis=null)
+	{
+		if (!isset($nis)) show_404();
+        
+        if ($this->kegiatan_model->checked()) {
+            redirect(site_url('jurusan/guru/bimbingan/detail/'));
+        }
+	}
+	
+	public function delete($id=null)
+    {
+        if (!isset($id)) show_404();
+        
+        if ($this->bimbingan_model->delete($id)) {
+            redirect(site_url('jurusan/guru/bimbingan'));
+        }
+    }
 }

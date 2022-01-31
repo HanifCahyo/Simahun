@@ -18,12 +18,13 @@
 					<div class="row">
 						<div class="col-md-6 col-sm-12">
 							<div class="title">
-								<h4>Input Kegiatan PKL</h4>
+								<h4>Edit Kegiatan PKL</h4>
 							</div>
 							<nav aria-label="breadcrumb" role="navigation">
 								<ol class="breadcrumb">
 									<li class="breadcrumb-item"><a href="<?php echo site_url('jurusan/siswa/Dashboard/') ?>">Home</a></li>
-									<li class="breadcrumb-item active" aria-current="page">Input Kegiatan PKL</li>
+									<li class="breadcrumb-item"><a href="<?php echo site_url('jurusan/siswa/kegiatan/list/') ?>">Monitoring Kegiatan Siswa</a></li>
+									<li class="breadcrumb-item active" aria-current="page">Edit Kegiatan PKL</li>
 								</ol>
 							</nav>
 						</div>
@@ -32,13 +33,9 @@
 				</div>
 				<!-- Default Basic Forms Start -->
 				<div class="pd-20 card-box mb-30">
-					<?php if ($this->session->flashdata('message')) : ?>
-						<div class="alert alert-success alert-dismissible fade show" role="alert"><?php echo $this->session->flashdata('message') ?>
-						</div>
-					<?php endif ?>
 					<div class="clearfix">
 						<div class="pull-left">
-							<h4 class="text-blue h4">Input Kegiatan PKL</h4>
+							<h4 class="text-blue h4">Edit Kegiatan PKL</h4>
 							<p class="mb-30">Mohon Isi Data pada Form Dibawah :</p>
 						</div>
 					</div>

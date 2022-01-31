@@ -66,4 +66,23 @@ class Penarikan_model extends CI_Model
         $this->tanggal_penarikan = $post["tanggal_penarikan"];
         return $this->db->insert($this->_table, $this);
     }
+
+    public function update() 
+    {
+        $post = $this->input->post();
+        $this->id = $post["id"];
+        $this->nomor = $post["nomor"];
+        $this->nis = $post["nis"];
+        $this->lamp = $post["lamp"];
+        $this->hal = $post["hal"];
+        $this->nama_perusahaan = $post["nama_perusahaan"];
+        $this->alamat_perusahaan = $post["alamat_perusahaan"];
+        $this->tanggal_penarikan = $post["tanggal_penarikan"];
+        return $this->db->update($this->_table, $this, array('id' => $post['id']));
+    }
+
+    public function delete($id)
+    {
+        return $this->db->delete($this->_table, array("id" => $id));
+    }
 }
