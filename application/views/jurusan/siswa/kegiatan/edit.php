@@ -46,7 +46,7 @@
 						<div class="form-group row">
 							<label class="col-sm-12 col-md-2 col-form-label">NAMA KEGIATAN</label>
 							<div class="col-sm-12 col-md-10">
-								<input class="form-control <?php echo form_error('nama_kegiatan') ? 'is-invalid' : '' ?>" type="text" name="nama_kegiatan" value="<?php echo $kegiatan->keterangan ?>">
+								<input class="form-control <?php echo form_error('nama_kegiatan') ? 'is-invalid' : '' ?>" type="text" name="nama_kegiatan" value="<?php echo $kegiatan->nama_kegiatan ?>">
 								<div class="invalid-feedback">
                                     <?php echo form_error('nama_kegiatan') ?>
                                 </div>
@@ -71,9 +71,28 @@
 							</div>
 						</div>
 						<div class="form-group row">
+							<label class="col-sm-12 col-md-2 col-form-label">WAKTU MULAI</label>
+							<div class="col-sm-12 col-md-10">
+								<input class="form-control time-picker <?php echo form_error('waktu_mulai') ? 'is-invalid' : '' ?>" placeholder="Select time" type="text" name="waktu_mulai" value="<?php echo $kegiatan->waktu_mulai ?>">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-sm-12 col-md-2 col-form-label">WAKTU SELESAI</label>
+							<div class="col-sm-12 col-md-10">
+								<input class="form-control time-picker <?php echo form_error('waktu_selesai') ? 'is-invalid' : '' ?>" placeholder="Select time" type="text" name="waktu_selesai" value="<?php echo $kegiatan->waktu_selesai ?>">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-sm-12 col-md-2 col-form-label">LOKASI</label>
+							<div class="col-sm-12 col-md-10">
+								<input class="form-control <?php echo form_error('lokasi') ? 'is-invalid' : '' ?>" type="text" name="lokasi" value="<?php echo $kegiatan->lokasi ?>">
+							</div>
+						</div>
+						<div class="form-group row">
 							<label class="col-sm-12 col-md-2 col-form-label">GAMBAR KEGIATAN</label>
 							<div class="col-sm-12 col-md-10">
 								<input class="form-control <?php echo form_error('image') ? 'is-invalid' : '' ?>" type="file" name="image" value="<?php echo $kegiatan->image ?>">
+								<input type="hidden" name="old_image" value="<?php echo $kegiatan->image ?>">
 								<div class="invalid-feedback">
                                     <?php echo form_error('image') ?>
                                 </div>

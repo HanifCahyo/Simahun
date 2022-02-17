@@ -21,8 +21,39 @@ class Kegiatan_model extends CI_Model
                 'label' => '',
                 'rules' => 'required'
             ],
+
             [
                 'field' => 'tanggal_kegiatan',
+                'label' => '',
+                'rules' => 'required'
+            ],
+
+            [
+                'field' => 'lokasi',
+                'label' => '',
+                'rules' => 'required'
+            ],
+
+            [
+                'field' => 'waktu_mulai',
+                'label' => '',
+                'rules' => 'required'
+            ],
+
+            [
+                'field' => 'waktu_selesai',
+                'label' => '',
+                'rules' => 'required'
+            ],
+        ];
+    }
+
+    public function rules2()
+    {
+        return [
+
+            [
+                'field' => 'validasi',
                 'label' => '',
                 'rules' => 'required'
             ],
@@ -68,26 +99,35 @@ class Kegiatan_model extends CI_Model
         return $this->db->update($this->_table, $this, array('id' => $post['id']));
     }
 
-    public function update2()
+    // public function update2()
+    // {
+    //     $post = $this->input->post();
+    //     $this->id = $post["id"];
+    //     $this->nama_kegiatan = $post["nama_kegiatan"];
+    //     $this->nis = $post["nis"];
+    //     $this->keterangan = $post["keterangan"];
+    //     $this->tanggal_kegiatan = $post["tanggal_kegiatan"];
+    //     $this->validasi = $post["validasi"];
+    //     if (!empty($_FILES["image"]["name"])) {
+    //         $this->image = $this->_uploadImage();
+    //     } else {
+    //         $this->image = $post["old_image"];
+    //     }
+    //     return $this->db->update($this->_table, $this, array('id' => $post['id']));
+    // }
+
+    public function validasi()
     {
         $post = $this->input->post();
         $this->id = $post["id"];
-        $this->nama_kegiatan = $post["nama_kegiatan"];
-        $this->nis = $post["nis"];
-        $this->keterangan = $post["keterangan"];
-        $this->tanggal_kegiatan = $post["tanggal_kegiatan"];
         $this->validasi = $post["validasi"];
-        if (!empty($_FILES["image"]["name"])) {
-            $this->image = $this->_uploadImage();
-        } else {
-            $this->image = $post["old_image"];
-        }
         return $this->db->update($this->_table, $this, array('id' => $post['id']));
     }
 
-    public function validasi($id)
+    public function approve($id)
     {
-        
+        $this->validasi = 'Sudah diapprove';
+        return $this->db->update($this->_table, $this, array('id' => $id));
     }
 
     public function delete($id)
@@ -102,7 +142,7 @@ class Kegiatan_model extends CI_Model
         $config['allowed_types']        = 'gif|jpg|png|jpeg';
         $config['file_name']            = $this->id;
         $config['overwrite']            = true;
-        $config['max_size']             = 1024; // 1MB
+        $config['max_size']             = 5024; // 1MB
         // $config['max_width']            = 1024;
         // $config['max_height']           = 768;
 
@@ -130,6 +170,18 @@ class Kegiatan_model extends CI_Model
 		$this->db->from('kegiatan');
 		$this->db->join('user', 'user.nomor_induk =  kegiatan.nis', 'left');
         $this->db->where('user.nomor_induk', $id);
+        $this->db->where('kegiatan.validasi', 'Belum diapprove');
+		$query = $this->db->get();
+		return $query->result();
+	}
+
+    public function getTable1($id) 
+	{
+        $this->db->select('*');
+		$this->db->from('kegiatan');
+		$this->db->join('user', 'user.nomor_induk =  kegiatan.nis', 'left');
+        $this->db->where('user.nomor_induk', $id);
+        $this->db->where('kegiatan.validasi', 'Sudah diapprove');
 		$query = $this->db->get();
 		return $query->result();
 	}
@@ -141,6 +193,19 @@ class Kegiatan_model extends CI_Model
 		$this->db->from('kegiatan');
 		$this->db->join('user', 'user.nomor_induk =  kegiatan.nis', 'left');
         $this->db->where('user.nomor_induk', $id);
+        $this->db->where('kegiatan.validasi', 'Belum diapprove');
+		$query = $this->db->get();
+		return $query->result();
+	}
+
+    public function getTable3() 
+	{
+        $id = $this->session->userdata('nomor_induk'); // dapatkan id user yg login
+        $this->db->select('*');
+		$this->db->from('kegiatan');
+		$this->db->join('user', 'user.nomor_induk =  kegiatan.nis', 'left');
+        $this->db->where('user.nomor_induk', $id);
+        $this->db->where('kegiatan.validasi', 'Sudah diapprove');
 		$query = $this->db->get();
 		return $query->result();
 	}
@@ -157,12 +222,4 @@ class Kegiatan_model extends CI_Model
         }
         return $enums;
     }
-
-    // public function checked()
-    // {
-    //     $post = $this->input->post();
-    //     $this->id = $post["id"];
-    //     $this->validasi = $post["Benar"];
-    //     return $this->db->update($this->_table, $this, array('id' => $post['id']));
-    // }
 }

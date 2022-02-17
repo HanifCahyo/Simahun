@@ -10,13 +10,13 @@ class Bimbingan_model extends CI_Model
         return [
             [
                 'field' => 'niy',
-                'label' => 'niy',
+                'label' => '',
                 'rules' => 'required'
             ],
 
             [
                 'field' => 'nis',
-                'label' => 'nis',
+                'label' => '',
                 'rules' => 'required'
             ],
         ];

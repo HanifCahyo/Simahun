@@ -40,7 +40,7 @@
 					</div>
 					<form action="" method="post">
                     <input type="hidden" name="id" value="<?php echo $penarikan->id ?>" />
-						<div class="form-group row">
+						<!-- <div class="form-group row">
 							<label class="col-sm-12 col-md-2 col-form-label">NOMOR</label>                           
 							<div class="col-sm-12 col-md-10">
 								<input class="form-control" type="text" name="nomor" value="<?php echo $penarikan->nomor ?>">
@@ -57,7 +57,19 @@
 							<div class="col-sm-12 col-md-10">
 								<input class="form-control" type="text" name="hal" value="<?php echo $penarikan->hal ?>">
 							</div>
+						</div> -->
+						<!-- <div class="form-group row">
+							<label class="col-sm-12 col-md-2 col-form-label">TANGGAL SURAT</label>
+							<div class="col-sm-12 col-md-10">
+								<input class="form-control" type="text" name="tanggal_surat" value="<?php echo $penarikan->tanggal_surat ?>">
+							</div>
 						</div>
+						<div class="form-group row">
+							<label class="col-sm-12 col-md-2 col-form-label">TAHUN PELAJARAN</label>
+							<div class="col-sm-12 col-md-10">
+								<input class="form-control" type="text" name="tahun_pelajaran" value="<?php echo $penarikan->tahun_pelajaran ?>">
+							</div>
+						</div> -->
 						<div class="form-group row">
 							<label class="col-sm-12 col-md-2 col-form-label">NAMA PERUSAHAAN</label>
 							<div class="col-sm-12 col-md-10">
@@ -71,12 +83,40 @@
 							</div>
 						</div>
 						<div class="form-group row">
-							<label class="col-sm-12 col-md-2 col-form-label">TANGGAL PENARIKAN</label>
+						  <label class="col-sm-12 col-md-2 col-form-label">Periode PKL</label>
+							<div class="col-sm-7 col-md-5">
+								<input type="text" class="form-control date-picker" placeholder="Pilih Tanggal" name="mulai_pkl" value="<?php echo $penarikan->mulai_pkl ?>">
+							</div>
+							<div class="col-sm-7 col-md-5">
+								<input type="text" class="form-control date-picker" placeholder="Pilih Tanggal" name="selesai_pkl" value="<?php echo $penarikan->selesai_pkl ?>">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-sm-12 col-md-2 col-form-label">NAMA</label>
 							<div class="col-sm-12 col-md-10">
-								<input class="form-control date-picker" type="text" name="tanggal_penarikan" value="<?php echo $penarikan->tanggal_penarikan ?>"> 
+								<input class="form-control" type="text" name="nama" value="<?php echo $penarikan->nama ?>">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-sm-12 col-md-2 col-form-label">KELAS</label>
+							<div class="col-sm-12 col-md-10">
+								<input class="form-control" type="text" name="kelas" value="<?php echo $penarikan->kelas ?>">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-sm-12 col-md-2 col-form-label">NOMOR WA</label>
+							<div class="col-sm-12 col-md-10">
+								<input class="form-control" type="number" name="nomor" value="<?php echo $penarikan->nomor ?>">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-sm-12 col-md-2 col-form-label">EMAIL</label>
+							<div class="col-sm-12 col-md-10">
+								<input class="form-control" type="email" name="email" value="<?php echo $penarikan->email ?>">
 							</div>
 						</div>
 						<input type="hidden" name="nis" value="<?php echo $penarikan->nis ?>" />
+						<input type="hidden" name="status" value="<?php echo $penarikan->status ?>" />
 						<div class="form-group row">
 							<div class="col-sm-12 col-md-10">
 								<input class="btn btn-success" type="submit" value="SIMPAN" />

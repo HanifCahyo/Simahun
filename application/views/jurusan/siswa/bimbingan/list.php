@@ -57,9 +57,8 @@
 					<table class="table table-striped">
 						<thead>
 							<tr>
-								<th scope="col">No</th>
 								<th scope="col">Nama Guru Pembimbing</th>
-								<th scope="col">Action</th>
+								<th scope="col">Aksi</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -68,7 +67,7 @@
 							foreach ($bimbingan as $aaa) :
 							?>
 								<tr>
-									<th scope="row"><?php echo $no++ ?></th>
+									<!-- <th scope="row"><?php echo $no++ ?></th> -->
 									<td><?php echo $aaa->name ?></td>
 									<td>
 										<div class="dropdown">

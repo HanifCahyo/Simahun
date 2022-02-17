@@ -7,11 +7,16 @@ class Pengajuan_model extends CI_Model
     public function rules()
     {
         return [
-            [
-                'field' => 'tahun_pelajaran',
-                'label' => 'tahun_pelajaran',
-                'rules' => 'required'
-            ],
+            // [
+            //     'field' => 'tanggal_surat',
+            //     'label' => 'tanggal_surat',
+            //     'rules' => 'required'
+            // ],
+            // [
+            //     'field' => 'tahun_pelajaran',
+            //     'label' => 'tahun_pelajaran',
+            //     'rules' => 'required'
+            // ],
 
             [
                 'field' => 'nama_perusahaan',
@@ -26,20 +31,38 @@ class Pengajuan_model extends CI_Model
             ],
 
             [
-                'field' => 'bidang_usaha',
-                'label' => 'bidang_usaha',
+                'field' => 'mulai_pkl',
+                'label' => 'mulai_pkl',
                 'rules' => 'required'
             ],
 
             [
-                'field' => 'periode_pkl',
-                'label' => 'periode_pkl',
+                'field' => 'selesai_pkl',
+                'label' => 'selesai_pkl',
+                'rules' => 'required'
+            ],
+
+            [
+                'field' => 'nama',
+                'label' => 'nama',
                 'rules' => 'required'
             ],
 
             [
                 'field' => 'kelas',
                 'label' => 'kelas',
+                'rules' => 'required'
+            ],
+
+            [
+                'field' => 'nomor',
+                'label' => 'nomor',
+                'rules' => 'required'
+            ],
+
+            [
+                'field' => 'email',
+                'label' => 'email',
                 'rules' => 'required'
             ],
 
@@ -51,6 +74,17 @@ class Pengajuan_model extends CI_Model
 		$this->db->select('pengajuan_pkl.*, user.nomor_induk, user.name, user.program_studi');
 		$this->db->from('pengajuan_pkl');
 		$this->db->join('user', 'user.nomor_induk = pengajuan_pkl.nis');
+        $this->db->where('pengajuan_pkl.status', '2');
+		$query = $this->db->get();
+		return $query->result();
+	}
+
+    public function getTable1() 
+	{
+		$this->db->select('pengajuan_pkl.*, user.nomor_induk, user.name, user.program_studi');
+		$this->db->from('pengajuan_pkl');
+		$this->db->join('user', 'user.nomor_induk = pengajuan_pkl.nis');
+        $this->db->where('pengajuan_pkl.status', '1');
 		$query = $this->db->get();
 		return $query->result();
 	}
@@ -62,6 +96,29 @@ class Pengajuan_model extends CI_Model
 		$this->db->from('pengajuan_pkl');
 		$this->db->join('user', 'user.nomor_induk = pengajuan_pkl.nis');
         $this->db->where('user.nomor_induk', $id);
+        $this->db->where('pengajuan_pkl.status', '1');
+		$query = $this->db->get();
+		return $query->result();
+	}
+
+    public function getTable3() 
+	{
+        $id = $this->session->userdata('nomor_induk'); // dapatkan id user yg login
+		$this->db->select('pengajuan_pkl.*, user.nomor_induk, user.name, user.program_studi');
+		$this->db->from('pengajuan_pkl');
+		$this->db->join('user', 'user.nomor_induk = pengajuan_pkl.nis');
+        $this->db->where('user.nomor_induk', $id);
+        $this->db->where('pengajuan_pkl.status', '2');
+		$query = $this->db->get();
+		return $query->result();
+	}
+
+    public function getTable4() 
+	{
+		$this->db->select('pengajuan_pkl.*, user.nomor_induk, user.name, user.program_studi');
+		$this->db->from('pengajuan_pkl');
+		$this->db->join('user', 'user.nomor_induk = pengajuan_pkl.nis');
+        $this->db->where('pengajuan_pkl.status', '0');
 		$query = $this->db->get();
 		return $query->result();
 	}
@@ -80,12 +137,16 @@ class Pengajuan_model extends CI_Model
     {
         $post = $this->input->post();
         $this->id = uniqid();
-        $this->tahun_pelajaran = $post["tahun_pelajaran"];
+        // $this->tanggal_surat = $post["tanggal_surat"];
+        // $this->tahun_pelajaran = $post["tahun_pelajaran"];
         $this->nama_perusahaan = $post["nama_perusahaan"];
         $this->alamat_perusahaan = $post["alamat_perusahaan"];
-        $this->bidang_usaha = $post["bidang_usaha"];
-		$this->periode_pkl = $post["periode_pkl"];
+		$this->mulai_pkl = $post["mulai_pkl"];
+        $this->selesai_pkl = $post["selesai_pkl"];
+        $this->nama = $post["nama"];
 		$this->kelas = $post["kelas"];
+        $this->nomor = $post["nomor"];
+        $this->email = $post["email"];
 		$this->nis = $post["nis"];
         return $this->db->insert($this->_table, $this);
     }
@@ -94,18 +155,25 @@ class Pengajuan_model extends CI_Model
     {
         $post = $this->input->post();
         $this->id = $post["id"];
+        $this->nomor_surat = $post["nomor_surat"];
+        $this->tanggal_surat = $post["tanggal_surat"];
         $this->tahun_pelajaran = $post["tahun_pelajaran"];
         $this->nama_perusahaan = $post["nama_perusahaan"];
         $this->alamat_perusahaan = $post["alamat_perusahaan"];
-        $this->bidang_usaha = $post["bidang_usaha"];
-		$this->periode_pkl = $post["periode_pkl"];
+		$this->mulai_pkl = $post["mulai_pkl"];
+        $this->selesai_pkl = $post["selesai_pkl"];
+        $this->nama = $post["nama"];
 		$this->kelas = $post["kelas"];
+        $this->nomor = $post["nomor"];
+        $this->email = $post["email"];
+        $this->status = $post["status"];
 		$this->nis = $post["nis"];
         return $this->db->update($this->_table, $this, array('id' => $post['id']));
     }
 
     public function delete($id)
     {
-        return $this->db->delete($this->_table, array("id" => $id));
+        $this->status = '0';
+        return $this->db->update($this->_table, $this, array('id' => $id));
     }
 }

@@ -102,7 +102,7 @@
                         <li><a href=<?php echo site_url('jurusan/siswa/bimbingan/') ?>>Guru Pembimbing</a></li>
                     </ul>
                     <ul class="submenu">
-                        <li><a href=<?php echo site_url('jurusan/siswa/kegiatan/list') ?>>Monitoring Kegiatan Siswa</a></li>
+                        <li><a href=<?php echo site_url('jurusan/siswa/kegiatan') ?>>Monitoring Kegiatan PKL</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
@@ -116,7 +116,7 @@
                         <li><a href=<?php echo site_url('jurusan/siswa/penarikan') ?>>Cetak Penarikan PKL</a></li>
                     </ul>
                     <ul class="submenu">
-                        <li><a href='#'>Cetak Sertifikat PKL</a></li>
+                        <li><a href=<?php echo site_url('jurusan/siswa/sertifikat') ?>>Cetak Sertifikat PKL</a></li>
                     </ul>
                 </li>
             </ul>

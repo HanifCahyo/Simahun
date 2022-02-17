@@ -18,12 +18,13 @@
 					<div class="row">
 						<div class="col-md-6 col-sm-12">
 							<div class="title">
-								<h4>Input Kegiatan PKL</h4>
+								<h4>Form Kegiatan PKL</h4>
 							</div>
 							<nav aria-label="breadcrumb" role="navigation">
 								<ol class="breadcrumb">
 									<li class="breadcrumb-item"><a href="<?php echo site_url('jurusan/siswa/Dashboard/') ?>">Home</a></li>
-									<li class="breadcrumb-item active" aria-current="page">Input Kegiatan PKL</li>
+									<li class="breadcrumb-item"><a href="<?php echo site_url('jurusan/siswa/kegiatan/') ?>">Monitoring Kegiatan Siswa</a></li>
+									<li class="breadcrumb-item active" aria-current="page">Form Kegiatan PKL</li>
 								</ol>
 							</nav>
 						</div>
@@ -38,12 +39,11 @@
 					<?php endif ?> -->
 					<div class="clearfix">
 						<div class="pull-left">
-							<h4 class="text-blue h4">Input Kegiatan PKL</h4>
+							<h4 class="text-blue h4">Form Kegiatan PKL</h4>
 							<p class="mb-30">Mohon Isi Data pada Form Dibawah :</p>
 						</div>
 					</div>
 					<form action="<?php echo site_url('jurusan/siswa/kegiatan/add') ?>" method="post" enctype="multipart/form-data">
-
 						<div class="form-group row">
 							<label class="col-sm-12 col-md-2 col-form-label">NAMA KEGIATAN</label>
 							<div class="col-sm-12 col-md-10">
@@ -77,12 +77,7 @@
 						<div class="form-group row">
 							<label class="col-sm-12 col-md-2 col-form-label">LOKASI</label>
 							<div class="col-sm-12 col-md-10">
-								<select class="custom-select col-12">
-									<option selected="">Choose...</option>
-									<option value="1">One</option>
-									<option value="2">Two</option>
-									<option value="3">Three</option>
-								</select>
+								<input class="form-control" type="text" name="lokasi">
 							</div>
 						</div>
 						<div class="form-group row">
@@ -97,7 +92,7 @@
 						<input type="hidden" name="nis" value="<?= $current_user->nomor_induk ?>" />
 						<div class="form-group row">
 							<div class="col-sm-12 col-md-10">
-								<input class="btn btn-success" type="submit" value="INPUT KEGIATAN" />
+								<input class="btn btn-success" type="submit" value="SIMPAN" />
 							</div>
 						</div>
 					</form>

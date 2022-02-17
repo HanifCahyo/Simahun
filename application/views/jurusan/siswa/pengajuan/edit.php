@@ -39,14 +39,19 @@
 						</div>
 					</div>
 					<form action="" method="post">
-						
+						<input type="hidden" name="id" value="<?php echo $pengajuan->id ?>" />
+						<!-- <div class="form-group row">
+							<label class="col-sm-12 col-md-2 col-form-label">TANGGAL SURAT</label>
+							<div class="col-sm-12 col-md-10">
+								<input class="form-control" type="text" name="tanggal_surat" value="<?php echo $pengajuan->tanggal_surat ?>">
+							</div>
+						</div>
 						<div class="form-group row">
 							<label class="col-sm-12 col-md-2 col-form-label">TAHUN PELAJARAN</label>
-                            <input type="hidden" name="id" value="<?php echo $pengajuan->id ?>" />
 							<div class="col-sm-12 col-md-10">
 								<input class="form-control" type="text" name="tahun_pelajaran" value="<?php echo $pengajuan->tahun_pelajaran ?>">
 							</div>
-						</div>
+						</div> -->
 						<div class="form-group row">
 							<label class="col-sm-12 col-md-2 col-form-label">NAMA PERUSAHAAN</label>
 							<div class="col-sm-12 col-md-10">
@@ -56,19 +61,22 @@
 						<div class="form-group row">
 							<label class="col-sm-12 col-md-2 col-form-label">ALAMAT PERUSAHAAN</label>
 							<div class="col-sm-12 col-md-10">
-                                <textarea class="form-control" name="alamat_perusahaan"><?php echo $pengajuan->alamat_perusahaan ?></textarea>
+								<textarea class="form-control" name="alamat_perusahaan"><?php echo $pengajuan->alamat_perusahaan ?></textarea>
 							</div>
 						</div>
 						<div class="form-group row">
-							<label class="col-sm-12 col-md-2 col-form-label">BIDANG USAHA</label>
-							<div class="col-sm-12 col-md-10">
-								<input class="form-control" type="text" name="bidang_usaha" value="<?php echo $pengajuan->bidang_usaha ?>">
+						  <label class="col-sm-12 col-md-2 col-form-label">Periode PKL</label>
+							<div class="col-sm-7 col-md-5">
+								<input type="text" class="form-control date-picker" placeholder="Pilih Tanggal" name="mulai_pkl" value="<?php echo $pengajuan->mulai_pkl ?>">
+							</div>
+							<div class="col-sm-7 col-md-5">
+								<input type="text" class="form-control date-picker" placeholder="Pilih Tanggal" name="selesai_pkl" value="<?php echo $pengajuan->selesai_pkl ?>">
 							</div>
 						</div>
 						<div class="form-group row">
-							<label class="col-sm-12 col-md-2 col-form-label">PERIODE PKL</label>
+							<label class="col-sm-12 col-md-2 col-form-label">NAMA</label>
 							<div class="col-sm-12 col-md-10">
-								<input class="form-control" type="text" name="periode_pkl" value="<?php echo $pengajuan->periode_pkl ?>">
+								<input class="form-control" type="text" name="nama" value="<?php echo $pengajuan->nama ?>">
 							</div>
 						</div>
 						<div class="form-group row">
@@ -77,7 +85,20 @@
 								<input class="form-control" type="text" name="kelas" value="<?php echo $pengajuan->kelas ?>">
 							</div>
 						</div>
+						<div class="form-group row">
+							<label class="col-sm-12 col-md-2 col-form-label">NOMOR WA</label>
+							<div class="col-sm-12 col-md-10">
+								<input class="form-control" type="number" name="nomor" value="<?php echo $pengajuan->nomor ?>">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-sm-12 col-md-2 col-form-label">EMAIL</label>
+							<div class="col-sm-12 col-md-10">
+								<input class="form-control" type="email" name="email" value="<?php echo $pengajuan->email ?>">
+							</div>
+						</div>
 						<input type="hidden" name="nis" value="<?php echo $pengajuan->nis ?>" />
+						<input type="hidden" name="status" value="<?php echo $pengajuan->status ?>" />
 						<div class="form-group row">
 							<div class="col-sm-12 col-md-10">
 								<input class="btn btn-success" type="submit" value="SIMPAN" />

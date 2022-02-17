@@ -18,12 +18,14 @@
                     <div class="row">
                         <div class="col-md-6 col-sm-12">
                             <div class="title">
-                                <h4>Input Kegiatan PKL</h4>
+                                <h4>Validasi Kegiatan PKL</h4>
                             </div>
                             <nav aria-label="breadcrumb" role="navigation">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="<?php echo site_url('jurusan/guru/Dashboard/') ?>">Home</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">Input Kegiatan PKL</li>
+                                    <li class="breadcrumb-item"><a href="<?php echo site_url('jurusan/guru/bimbingan/') ?>">Siswa Bimbingan</a></li>
+                                    <li class="breadcrumb-item"><a href="<?php echo site_url('jurusan/guru/bimbingan/detail/' . $kegiatan->nis) ?>">Monitoring Kegiatan Siswa</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Validasi Kegiatan PKL</li>
                                 </ol>
                             </nav>
                         </div>
@@ -37,16 +39,16 @@
                         </div>
                     <?php endif ?>
                     <div class="clearfix">
-                        <div class="pull-left">
-                            <h4 class="text-blue h4">Input Kegiatan PKL</h4>
-                            <p class="mb-30">Mohon Isi Data pada Form Dibawah :</p>
+                        <div class="pull-left"> 
+                            <h4 class="text-blue h4">Validasi Kegiatan PKL</h4>
+                            <!-- <p class="mb-30">Mohon Isi Data pada Form Dibawah :</p> -->
                         </div>
                     </div>
                     <form action="" method="post" enctype="multipart/form-data">
 
                         <input type="hidden" name="id" value="<?php echo $kegiatan->id ?>" />
 
-                        <div class="form-group row">
+                        <!-- <div class="form-group row">
                             <label class="col-sm-12 col-md-2 col-form-label">NAMA KEGIATAN</label>
                             <div class="col-sm-12 col-md-10">
                                 <input class="form-control <?php echo form_error('nama_kegiatan') ? 'is-invalid' : '' ?>" type="text" name="nama_kegiatan" value="<?php echo $kegiatan->keterangan ?>">
@@ -82,7 +84,7 @@
                                     <?php echo form_error('image') ?>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="form-group row">
                             <label class="col-sm-12 col-md-2 col-form-label">VALIDASI</label>
                             <div class="col-sm-12 col-md-10">

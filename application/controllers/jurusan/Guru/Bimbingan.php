@@ -25,8 +25,31 @@ class Bimbingan extends CI_Controller
 	public function detail($id)
 	{
 		$data["kegiatan"] = $this->kegiatan_model->getTable($id);
+		$data["kegiatan2"] = $this->kegiatan_model->getTable1($id);
 		$data['current_user'] = $this->auth_model->current_user();
 		$this->load->view("jurusan/guru/kegiatan/list", $data);
+	}
+
+	public function editkegiatan($id = null)
+	{
+		if (!isset($id)) redirect('jurusan/guru/kegiatan');
+
+		$kegiatan = $this->kegiatan_model;
+		$validation = $this->form_validation;
+		$validation->set_rules($kegiatan->rules2());
+
+		if ($validation->run()) {
+            $kegiatan->validasi();
+            $this->session->set_flashdata('message', 'Data berhasil tersimpan');
+
+        }
+
+		$data["kegiatan"] = $kegiatan->getById($id);
+        if (!$data["kegiatan"]) show_404();
+
+		$data['validasi']=$this->kegiatan_model->validasi_enums('kegiatan','validasi');
+		$data['current_user'] = $this->auth_model->current_user();
+		$this->load->view("jurusan/guru/kegiatan/edit", $data);
 	}
 
 	public function edit($id = null)
@@ -35,7 +58,7 @@ class Bimbingan extends CI_Controller
 
 		if (!isset($id)) redirect('jurusan/guru/bimbingan/detail');
 
-		$bimbingan = $this->bimbingan_model;
+		$bimbingan = $this->kegiatan_model;
 		$validation = $this->form_validation;
 		$validation->set_rules($bimbingan->rules2());
 
@@ -50,21 +73,21 @@ class Bimbingan extends CI_Controller
         $this->load->view("jurusan/guru/kegiatan/edit", $data);
 	}
 
-	public function checked($nis=null)
-	{
-		if (!isset($nis)) show_404();
+	public function approve($id=null)
+    {
+        if (!isset($id)) show_404();
         
-        if ($this->kegiatan_model->checked()) {
-            redirect(site_url('jurusan/guru/bimbingan/detail/'));
+        if ($this->kegiatan_model->approve($id)) {
+            redirect(site_url('jurusan/guru/bimbingan'));
         }
-	}
+    }
 	
 	public function delete($id=null)
     {
         if (!isset($id)) show_404();
         
         if ($this->bimbingan_model->delete($id)) {
-            redirect(site_url('jurusan/guru/bimbingan'));
+            // redirect(site_url('jurusan/guru/bimbingan'));
         }
     }
 }

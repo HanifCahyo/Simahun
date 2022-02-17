@@ -16,6 +16,7 @@
     public function index() 
     {
         $data["pengajuan"] = $this->pengajuan_model->getTable2();
+        $data["pengajuan2"] = $this->pengajuan_model->getTable3();
         $data['current_user'] = $this->auth_model->current_user();
 		$this->load->view("jurusan/siswa/Pengajuan/list", $data);
     }

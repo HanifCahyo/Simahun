@@ -113,7 +113,7 @@
                         <li><a href=<?php echo site_url('jurusan/guru/penarikan') ?>>Cetak Penarikan PKL</a></li>
                     </ul>
                     <ul class="submenu">
-                        <li><a href='#'>Cetak Sertifikat PKL</a></li>
+                        <li><a href=<?php echo site_url('jurusan/guru/sertifikat') ?>>Cetak Sertifikat PKL</a></li>
                     </ul>
                 </li>
             </ul>

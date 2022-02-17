@@ -15,7 +15,8 @@
 
     public function index() 
     {
-        $data["penarikan"] = $this->penarikan_model->getTable();
+        $data["penarikan"] = $this->penarikan_model->getTable2();
+        $data["penarikan2"] = $this->penarikan_model->getTable3();
         $data['current_user'] = $this->auth_model->current_user();
 		$this->load->view("jurusan/siswa/penarikan/list", $data);
     }

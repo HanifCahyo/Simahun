@@ -13,9 +13,10 @@ class Kegiatan extends CI_Controller
 		}
 	}
 
-	public function list()
+	public function index()
 	{
 		$data["kegiatan"] = $this->kegiatan_model->getTable2();
+		$data["kegiatan2"] = $this->kegiatan_model->getTable3();
 		$data['current_user'] = $this->auth_model->current_user();
 		$this->load->view("jurusan/siswa/kegiatan/list", $data);	
 	}
@@ -29,7 +30,7 @@ class Kegiatan extends CI_Controller
 		if ($validation->run()) {
             $kegiatan->save();
             $this->session->set_flashdata('message', 'Data berhasil tersimpan');
-			redirect(site_url('jurusan/siswa/kegiatan/list'));
+			redirect(site_url('jurusan/siswa/kegiatan'));
         }
 
 		$data['current_user'] = $this->auth_model->current_user();
@@ -38,7 +39,7 @@ class Kegiatan extends CI_Controller
 
 	public function edit($id = null)
 	{
-		if (!isset($id)) redirect('jurusan/siswa/kegiatan/list');
+		if (!isset($id)) redirect('jurusan/siswa/kegiatan');
 
 		$kegiatan = $this->kegiatan_model;
 		$validation = $this->form_validation;
@@ -47,7 +48,7 @@ class Kegiatan extends CI_Controller
 		if ($validation->run()) {
             $kegiatan->update();
             $this->session->set_flashdata('message', 'Data berhasil tersimpan');
-			redirect(site_url('jurusan/siswa/kegiatan/list'));
+			redirect(site_url('jurusan/siswa/kegiatan'));
         }
 
 		$data["kegiatan"] = $kegiatan->getById($id);
@@ -62,7 +63,7 @@ class Kegiatan extends CI_Controller
         if (!isset($id)) show_404();
         
         if ($this->kegiatan_model->delete($id)) {
-            redirect(site_url('jurusan/siswa/kegiatan/list'));
+            redirect(site_url('jurusan/siswa/kegiatan'));
         }
     }
 
