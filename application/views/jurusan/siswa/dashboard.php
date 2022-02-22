@@ -38,8 +38,8 @@
 									<div class="product-box">
 										<div class="producct-img"><img src="<?php echo base_url('assets_deskapp/vendors/images/product-img1.jpg') ?>" alt=""></div>
 										<div class="product-caption">
-											<h4><a href="#">Input Pengajuan PKL</a></h4>
-											<a href="<?php echo site_url('jurusan/siswa/Input_pengajuan/') ?>" class="btn btn-outline-primary">Go</a>
+											<h4><a href="#">Monitoring Kegiatan PKL</a></h4>
+											<a href="<?php echo site_url('jurusan/siswa/kegiatan') ?>" class="btn btn-outline-primary">Masuk</a>
 										</div>
 									</div>
 								</li>
@@ -47,8 +47,8 @@
 									<div class="product-box">
 										<div class="producct-img"><img src="<?php echo base_url('assets_deskapp/vendors/images/product-img2.jpg') ?>" alt=""></div>
 										<div class="product-caption">
-											<h4><a href="#">Cetak Lembar Monitoring</a></h4>
-											<a href="<?php echo site_url('jurusan/siswa/Cetak_lembarmonitoring/') ?>" class="btn btn-outline-primary">Go</a>
+											<h4><a href="#">Cetak Pengajuan PKL</a></h4>
+											<a href="<?php echo site_url('jurusan/siswa/pengajuan') ?>" class="btn btn-outline-primary">Masuk</a>
 										</div>
 									</div>
 								</li>
@@ -57,7 +57,7 @@
 										<div class="producct-img"><img src="<?php echo base_url('assets_deskapp/vendors/images/product-img3.jpg') ?>" alt=""></div>
 										<div class="product-caption">
 											<h4><a href="">Cetak Penarikan PKL</a></h4>
-											<a href="<?php echo site_url('jurusan/siswa/Cetak_penarikan/') ?>" class="btn btn-outline-primary">Go</a>
+											<a href="<?php echo site_url('jurusan/siswa/penarikan') ?>" class="btn btn-outline-primary">Masuk</a>
 										</div>
 									</div>
 								</li>
@@ -66,7 +66,7 @@
 										<div class="producct-img"><img src="<?php echo base_url('assets_deskapp/vendors/images/product-img4.jpg') ?>" alt=""></div>
 										<div class="product-caption">
 											<h4><a href="#">Cetak Sertifikat PKL</a></h4>
-											<a href="<?php echo site_url('jurusan/siswa/Cetak_sertifikat/') ?>" class="btn btn-outline-primary">Go</a>
+											<a href="<?php echo site_url('jurusan/siswa/sertifikat') ?>" class="btn btn-outline-primary">Masuk</a>
 										</div>
 									</div>
 						</div>

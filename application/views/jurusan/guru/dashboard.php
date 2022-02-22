@@ -21,7 +21,7 @@
                     </div>
                     <div class="col-md-8">
                         <h4 class="font-20 weight-500 mb-10 text-capitalize">
-                            Welcome back <div class="weight-600 font-30 text-blue"><?= htmlentities($current_user->name) ?></div>
+                            Selamat Datang <div class="weight-600 font-30 text-blue"><?= htmlentities($current_user->name) ?></div>
                         </h4>
                     </div>
                 </div>
@@ -36,8 +36,8 @@
 								<div class="product-box">
 									<div class="producct-img"><img src="<?php echo base_url('assets_deskapp/vendors/images/product-img1.jpg')?>" alt=""></div>
 									<div class="product-caption">
-										<h4><a href="#">Input Pengajuan PKL</a></h4>
-										<a href="<?php echo site_url('jurusan/guru/Input_pengajuan/') ?>" class="btn btn-outline-primary">Go</a>
+										<h4><a href="#">Monitoring Kegiatan Siswa</a></h4>
+										<a href="<?php echo site_url('jurusan/guru/bimbingan/') ?>" class="btn btn-outline-primary">Masuk</a>
 									</div>
 								</div>
 							</li>
@@ -45,8 +45,8 @@
 								<div class="product-box">
 									<div class="producct-img"><img src="<?php echo base_url('assets_deskapp/vendors/images/product-img2.jpg')?>" alt=""></div>
 									<div class="product-caption">
-										<h4><a href="#">Cetak Lembar Monitoring</a></h4>
-										<a href="<?php echo site_url('jurusan/guru/Cetak_lembarmonitoring/') ?>" class="btn btn-outline-primary">Go</a>
+										<h4><a href="#">Cetak Pengajuan PKL</a></h4>
+										<a href="<?php echo site_url('jurusan/guru/pengajuan') ?>" class="btn btn-outline-primary">Masuk</a>
 									</div>
 								</div>
 							</li>
@@ -55,7 +55,7 @@
 									<div class="producct-img"><img src="<?php echo base_url('assets_deskapp/vendors/images/product-img3.jpg')?>" alt=""></div>
 									<div class="product-caption">
 										<h4><a href="">Cetak Penarikan PKL</a></h4>
-										<a href="<?php echo site_url('jurusan/guru/Cetak_penarikan/') ?>" class="btn btn-outline-primary">Go</a>
+										<a href="<?php echo site_url('jurusan/guru/penarikan') ?>" class="btn btn-outline-primary">Masuk</a>
 									</div>
 								</div>
 							</li>
@@ -64,7 +64,7 @@
 									<div class="producct-img"><img src="<?php echo base_url('assets_deskapp/vendors/images/product-img4.jpg')?>" alt=""></div>
 									<div class="product-caption">
 										<h4><a href="#">Cetak Sertifikat PKL</a></h4>
-										<a href="<?php echo site_url('jurusan/guru/Cetak_sertifikat/') ?>" class="btn btn-outline-primary">Go</a>
+										<a href="<?php echo site_url('jurusan/guru/sertifikat') ?>" class="btn btn-outline-primary">Masuk</a>
 									</div>
 								</div>         
             </div>

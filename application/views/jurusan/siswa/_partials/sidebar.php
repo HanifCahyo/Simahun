@@ -74,10 +74,10 @@
 </div>
 
 <div class="left-side-bar">
-    <div class="brand-logo">
+<div class="brand-logo">
         <a href="index.html">
-            <img src="<?php echo base_url('assets_deskapp/vendors/images/deskapp-logo.svg') ?>" alt="" class="dark-logo">
-            <img src="<?php echo base_url('assets_deskapp/vendors/images/deskapp-logo-white.svg') ?>" alt="" class="light-logo">
+            <img src="<?php echo base_url('assets_deskapp/vendors/images/simahun.png') ?>" alt="" class="dark-logo">
+            <img src="<?php echo base_url('assets_deskapp/vendors/images/simahun.png') ?>" alt="" class="light-logo">
         </a>
         <div class="close-sidebar" data-toggle="left-sidebar-close">
             <i class="ion-close-round"></i>
@@ -88,10 +88,10 @@
             <ul id="accordion-menu">
                 <li class="dropdown">
                     <a href="javascript:;" class="dropdown-toggle">
-                        <span class="micon dw dw-house-1"></span><span class="mtext">Home</span>
+                        <span class="micon dw dw-house-1"></span><span class="mtext">Menu Utama</span>
                     </a>
                     <ul class="submenu">
-                        <li><a href="<?php echo site_url('jurusan/siswa/Dashboard/') ?>">Dashboard</a></li>
+                        <li><a href="<?php echo site_url('jurusan/siswa/Dashboard/') ?>">Dasbor</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">

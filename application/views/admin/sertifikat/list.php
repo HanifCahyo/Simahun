@@ -25,7 +25,7 @@
 							</div>
 							<nav aria-label="breadcrumb" role="navigation">
 								<ol class="breadcrumb">
-									<li class="breadcrumb-item"><a href="<?php echo site_url('admin/Dashboard/') ?>">Home</a></li>
+									<li class="breadcrumb-item"><a href="<?php echo site_url('admin/Dashboard/') ?>">Menu Utama</a></li>
 									<li class="breadcrumb-item active" aria-current="page">Cetak Sertifikat PKL</li>
 								</ol>
 							</nav>
@@ -100,7 +100,7 @@
 												<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
 													<!-- <a class="dropdown-item" href="<?php echo site_url('admin/sertifikat/print/' . $aaa->id) ?>"><i class="dw dw-print"></i> Print</a> -->
 													<a class="dropdown-item" href="<?php echo site_url('admin/sertifikat/edit/' . $aaa->id) ?>"><i class="dw dw-edit2"></i> Edit</a>
-													<a class="dropdown-item" onclick="deleteConfirm('<?php echo site_url('admin/sertifikat/delete/' . $aaa->id) ?>')" href="#!"><i class="dw dw-delete-3"></i> Delete</a>
+													<a class="dropdown-item" onclick="deleteConfirm('<?php echo site_url('admin/sertifikat/delete/' . $aaa->id) ?>')" href="#!"><i class="dw dw-delete-3"></i> Hapus</a>
 												</div>
 											</div>
 										</td>
@@ -123,7 +123,7 @@
 												<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
 													<a class="dropdown-item" href="<?php echo site_url('admin/sertifikat/print/' . $aaa->id) ?>"><i class="dw dw-print"></i> Print</a>
 													<a class="dropdown-item" href="<?php echo site_url('admin/sertifikat/edit/' . $aaa->id) ?>"><i class="dw dw-edit2"></i> Edit</a>
-													<a class="dropdown-item" onclick="deleteConfirm('<?php echo site_url('admin/sertifikat/delete/' . $aaa->id) ?>')" href="#!"><i class="dw dw-delete-3"></i> Delete</a>
+													<a class="dropdown-item" onclick="deleteConfirm('<?php echo site_url('admin/sertifikat/delete/' . $aaa->id) ?>')" href="#!"><i class="dw dw-delete-3"></i> Hapus</a>
 												</div>
 											</div>
 										</td>

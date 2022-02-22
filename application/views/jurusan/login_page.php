@@ -4,7 +4,7 @@
 <head>
 	<!-- Basic Page Info -->
 	<meta charset="utf-8">
-	<title>DeskApp - Bootstrap Admin Dashboard HTML Template</title>
+	<title>SIMAHUN - Sistem Informasi Manajemen Hubungan dan Industri</title>
 
 	<!-- Site favicon -->
 	<link rel="apple-touch-icon" sizes="180x180" href="<?php echo base_url('assets_deskapp/vendors/images/apple-touch-icon.png') ?>">
@@ -54,7 +54,7 @@
 				<div class="col-md-6 col-lg-5">
 					<div class="login-box bg-white box-shadow border-radius-10">
 						<div class="login-title">
-							<h2 class="text-center text-primary">Login Simahun</h2>
+							<h2 class="text-center text-primary">Simahun</h2>
 						</div>
 						<?php if ($this->session->flashdata('message_login_error')) : ?>
 							<div class="alert alert-danger alert-dismissible fade show" role="alert">
@@ -87,7 +87,7 @@
 							<div class="row">
 								<div class="col-sm-12">
 									<div class="input-group mb-0">
-										<input class="btn btn-primary btn-lg btn-block" type="submit" value="Sign In">
+										<input class="btn btn-primary btn-lg btn-block" type="submit" value="Masuk">
 									</div>
 								</div>
 							</div>

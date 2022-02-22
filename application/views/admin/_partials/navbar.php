@@ -18,9 +18,9 @@
                     <span class="user-name"><?= htmlentities($current_user->name) ?></span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-                    <a class="dropdown-item" href="<?php echo site_url('admin/profile/') ?>"><i class="dw dw-user1"></i> Profile</a>
-                    <a class="dropdown-item" href="<?php echo site_url('admin/profile/edit_profile') ?>"><i class="dw dw-settings2"></i> Setting</a>
-                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal"><i class="dw dw-logout"></i> Log Out</a>
+                    <a class="dropdown-item" href="<?php echo site_url('admin/profile/') ?>"><i class="dw dw-user1"></i> Profil</a>
+                    <a class="dropdown-item" href="<?php echo site_url('admin/profile/edit_profile') ?>"><i class="dw dw-settings2"></i> Pengaturan</a>
+                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal"><i class="dw dw-logout"></i> Keluar</a>
                 </div>
             </div>
         </div>

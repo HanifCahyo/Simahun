@@ -25,7 +25,7 @@
 							</div>
 							<nav aria-label="breadcrumb" role="navigation">
 								<ol class="breadcrumb">
-									<li class="breadcrumb-item"><a href="<?php echo site_url('jurusan/guru/Dashboard/') ?>">Home</a></li>
+									<li class="breadcrumb-item"><a href="<?php echo site_url('jurusan/guru/Dashboard/') ?>">Menu Utana</a></li>
 									<li class="breadcrumb-item"><a href="<?php echo site_url('jurusan/guru/bimbingan/') ?>">Siswa Bimbingan</a></li>
 									<li class="breadcrumb-item active" aria-current="page">Monitoring Pekerjaan Siswa</li>
 								</ol>

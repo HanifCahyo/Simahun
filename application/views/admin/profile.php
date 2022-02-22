@@ -122,7 +122,7 @@
 																</div>
 															</div>
 															<div>
-																<button type="submit" name="save" class="btn btn-primary">Save Update</button>
+																<button type="submit" name="save" class="btn btn-primary">Simpan</button>
 															</div>
 														</li>
 														<li class="weight-500 col-md-6">
@@ -152,7 +152,7 @@
 																</select>
 															</div> -->
 															<div class="form-group mb-0">
-																<input type="submit" class="btn btn-primary" value="Save & Update">
+																<input type="submit" class="btn btn-primary" value="Simpan">
 															</div>
 														</li>
 													</ul>
@@ -172,11 +172,11 @@
 																<input class="form-control form-control-lg" type="password" name="password" value="" required>
 															</div>
 															<div class="form-group">
-																<label>Confirm Password</label>
+																<label>Konfirmasi Password</label>
 																<input class="form-control form-control-lg" type="password" name="password_confirm" value="" required>
 															</div>
 															<div>
-																<button type="submit" name="save" class="btn btn-primary">Save Update</button>
+																<button type="submit" name="save" class="btn btn-primary">Simpan</button>
 															</div>
 														</li>
 													</ul>
@@ -195,8 +195,8 @@
 																<input class="form-control form-control-lg" type="file" name="avatar">
 															</div>
 															<div>
-																<button type="submit" name="save" class="btn btn-primary">Save Update</button>
-																<a href="<?= site_url('admin/profile/remove_avatar') ?>" class="txt-red">Remove Avatar</a>
+																<button type="submit" name="save" class="btn btn-primary">Simpan</button>
+																<a href="<?= site_url('jurusan/siswa/profile/remove_avatar') ?>" class="btn btn-danger">Hapus Avatar</a>
 															</div>
 														</li>
 													</ul>
