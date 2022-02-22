@@ -22,7 +22,7 @@
 							</div>
 							<nav aria-label="breadcrumb" role="navigation">
 								<ol class="breadcrumb">
-									<li class="breadcrumb-item"><a href="<?php echo site_url('admin/Dashboard/') ?>">Home</a></li>
+									<li class="breadcrumb-item"><a href="<?php echo site_url('admin/Dashboard/') ?>">Menu Utama</a></li>
 									<li class="breadcrumb-item"><a href="<?php echo site_url('admin/Pengajuan/') ?>">Cetak Pengajuan PKL</a></li>
 									<li class="breadcrumb-item active" aria-current="page">Edit Pengajuan PKL</li>
 								</ol>

@@ -22,7 +22,7 @@
 							</div>
 							<nav aria-label="breadcrumb" role="navigation">
 								<ol class="breadcrumb">
-									<li class="breadcrumb-item"><a href="<?php echo site_url('jurusan/siswa/Dashboard/') ?>">Home</a></li>
+									<li class="breadcrumb-item"><a href="<?php echo site_url('jurusan/siswa/Dashboard/') ?>">Menu Utama</a></li>
 									<li class="breadcrumb-item"><a href="<?php echo site_url('jurusan/siswa/kegiatan/list/') ?>">Monitoring Kegiatan Siswa</a></li>
 									<li class="breadcrumb-item active" aria-current="page">Edit Kegiatan PKL</li>
 								</ol>

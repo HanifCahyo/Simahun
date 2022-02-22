@@ -4,7 +4,7 @@
 <head>
 	<!-- Basic Page Info -->
 	<meta charset="utf-8">
-	<title>DeskApp - Bootstrap Admin Dashboard HTML Template</title>
+	<title>SIMAHUN - Sistem Informasi Manajemen Hubungan dan Industri</title>
 
 	<!-- Site favicon -->
 	<link rel="apple-touch-icon" sizes="180x180" href="<?php echo base_url('assets_deskapp/vendors/images/apple-touch-icon.png') ?>">
@@ -87,7 +87,7 @@
 							<div class="row">
 								<div class="col-sm-12">
 									<div class="input-group mb-0">
-										<input class="btn btn-primary btn-lg btn-block" type="submit" value="Sign In">
+										<input class="btn btn-primary btn-lg btn-block" type="submit" value="Masuk">
 									</div>
 								</div>
 							</div>

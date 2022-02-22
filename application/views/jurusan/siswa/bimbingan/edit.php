@@ -22,7 +22,7 @@
 							</div>
 							<nav aria-label="breadcrumb" role="navigation">
 								<ol class="breadcrumb">
-									<li class="breadcrumb-item"><a href="<?php echo site_url('jurusan/siswa/Dashboard/') ?>">Home</a></li>
+									<li class="breadcrumb-item"><a href="<?php echo site_url('jurusan/siswa/Dashboard/') ?>">Menu Utama</a></li>
 									<li class="breadcrumb-item active" aria-current="page">Tambahkan Guru Pembimbing</li>
 								</ol>
 							</nav>
@@ -41,7 +41,7 @@
 					<form action="<?php echo site_url('jurusan/siswa/bimbingan/add') ?>" method="post">
 
 						<div class="form-group row">
-							<label class="col-sm-12 col-md-2 col-form-label">Select</label>
+							<label class="col-sm-12 col-md-2 col-form-label">Pilih</label>
 							<div class="col-sm-12 col-md-10">
 								<select class="selectpicker form-control form-control-lg col-12" name="niy" data-style="btn-outline-secondary btn-lg" title="Not Chosen">
 									<?php foreach ($guru as $guru) : ?>

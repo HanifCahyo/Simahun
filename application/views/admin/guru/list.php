@@ -34,7 +34,7 @@
                             <tr>
                                 <th class="table-plus datatable-nosort">Nomor Induk Yayasan</th>
                                 <th>Nama</th>
-                                <th class="datatable-nosort">Action</th>
+                                <th class="datatable-nosort">Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -48,9 +48,9 @@
                                                 <i class="dw dw-more"></i>
                                             </a>
                                             <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-                                                <a class="dropdown-item" href="#"><i class="dw dw-eye"></i> View</a>
+                                                <a class="dropdown-item" href="#"><i class="dw dw-eye"></i> Lihat</a>
                                                 <a class="dropdown-item" href="<?php echo site_url('admin/guru/edit/' . $guru->nomor_induk) ?>"><i class="dw dw-edit2"></i> Edit</a>
-                                                <a class="dropdown-item" onclick="deleteConfirm('<?php echo site_url('admin/guru/delete/' . $guru->nomor_induk) ?>')" href="#!"><i class="dw dw-delete-3"></i> Delete</a>
+                                                <a class="dropdown-item" onclick="deleteConfirm('<?php echo site_url('admin/guru/delete/' . $guru->nomor_induk) ?>')" href="#!"><i class="dw dw-delete-3"></i> Hapus</a>
                                             </div>
                                         </div>
                                     </td>

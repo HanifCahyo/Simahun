@@ -22,7 +22,7 @@
 							</div>
 							<nav aria-label="breadcrumb" role="navigation">
 								<ol class="breadcrumb">
-									<li class="breadcrumb-item"><a href="<?php echo site_url('jurusan/siswa/Dashboard/') ?>">Home</a></li>
+									<li class="breadcrumb-item"><a href="<?php echo site_url('jurusan/siswa/Dashboard/') ?>">Menu Utama</a></li>
 									<li class="breadcrumb-item"><a href="<?php echo site_url('jurusan/siswa/pengajuan/') ?>">Cetak Sertifikat PKL</a></li>
 									<li class="breadcrumb-item active" aria-current="page">Form Sertifikat PKL</li>
 								</ol>

@@ -25,7 +25,7 @@
 							</div>
 							<nav aria-label="breadcrumb" role="navigation">
 								<ol class="breadcrumb">
-									<li class="breadcrumb-item"><a href="<?php echo site_url('jurusan/guru/Dashboard/') ?>">Home</a></li>
+									<li class="breadcrumb-item"><a href="<?php echo site_url('jurusan/guru/Dashboard/') ?>">Menu Utama</a></li>
 									<li class="breadcrumb-item active" aria-current="page">Siswa Bimbingan</li>
 								</ol>
 							</nav>
@@ -52,7 +52,7 @@
 								<th scope="col">Nama</th>
 								<th scope="col">Program Studi</th>
 								<th scope="col">Status PKL</th>
-								<th scope="col">Action</th>
+								<th scope="col">Aksi</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -71,8 +71,8 @@
 												<i class="dw dw-more"></i>
 											</a>
 											<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-												<a class="dropdown-item" href="<?php echo site_url('jurusan/guru/bimbingan/detail/' . $aaa->nomor_induk) ?>"><i class="dw dw-eye"></i> View</a>
-												<a class="dropdown-item" onclick="deleteConfirm('<?php echo site_url('jurusan/guru/bimbingan/delete/' . $aaa->id) ?>')" href="#!"><i class="dw dw-delete-3"></i> Delete</a>
+												<a class="dropdown-item" href="<?php echo site_url('jurusan/guru/bimbingan/detail/' . $aaa->nomor_induk) ?>"><i class="dw dw-eye"></i> Lihat</a>
+												<a class="dropdown-item" onclick="deleteConfirm('<?php echo site_url('jurusan/guru/bimbingan/delete/' . $aaa->id) ?>')" href="#!"><i class="dw dw-delete-3"></i> Hapus</a>
 											</div>
 										</div>
 								</tr>
