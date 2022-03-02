@@ -25,6 +25,15 @@ class Guru_model extends CI_Model
         return $this->db->get_where($this->_table, ["nomor_induk" => $id])->row();
     }
 
+    public function save()
+    {
+        $post = $this->input->post();
+        $this->nomor_induk = $post["nomor_induk"];
+        $this->name = $post["name"];
+        $this->password = $post["password"];
+        return $this->db->insert($this->_table, $this);
+    }
+
     public function update()
     {
         $post = $this->input->post();

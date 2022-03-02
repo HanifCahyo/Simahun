@@ -40,7 +40,7 @@ class Bimbingan extends CI_Controller
 
 		if ($validation->run()) {
             $kegiatan->validasi();
-            $this->session->set_flashdata('message', 'Data berhasil tersimpan');
+            $this->session->set_flashdata('msg_success', 'Data berhasil tersimpan');
 
         }
 
@@ -73,21 +73,21 @@ class Bimbingan extends CI_Controller
         $this->load->view("jurusan/guru/kegiatan/edit", $data);
 	}
 
-	public function approve($id=null)
-    {
-        if (!isset($id)) show_404();
+	// public function approve($id=null)
+    // {
+    //     if (!isset($id)) show_404();
         
-        if ($this->kegiatan_model->approve($id)) {
-            redirect(site_url('jurusan/guru/bimbingan'));
-        }
-    }
+    //     if ($this->kegiatan_model->approve($id)) {
+    //         redirect(site_url('jurusan/guru/bimbingan'));
+    //     }
+    // }
 	
 	public function delete($id=null)
     {
         if (!isset($id)) show_404();
         
         if ($this->bimbingan_model->delete($id)) {
-            // redirect(site_url('jurusan/guru/bimbingan'));
+            redirect(site_url('jurusan/guru/bimbingan'));
         }
     }
 }

@@ -22,3 +22,4 @@
 <!-- Datatable Setting js -->
 <script src="<?php echo base_url('assets_deskapp/vendors/scripts/datatable-setting.js') ?>"></script>
 
+

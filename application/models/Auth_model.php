@@ -165,6 +165,15 @@ class Auth_model extends CI_Model
 		$this->db->query($sql);
 	}
 
+	public function save()
+	{
+		$post = $this->input->post();
+        $this->nomor_induk = $post["nomor_induk"];
+        $this->name = $post["name"];
+        $this->password = $post["password"];
+        return $this->db->insert($this->_table, $this);
+	}
+
 	public function update($data)
 	{
 		if (!$data['nomor_induk']) {

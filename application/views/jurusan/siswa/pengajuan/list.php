@@ -43,6 +43,7 @@
 				<!-- Simple Datatable start -->
 				<div class="card-box mb-30">
 					<div class="pb-20">
+
 						<?php if ($this->session->flashdata('message')) : ?>
 							<div class="alert alert-success alert-dismissible fade show" role="alert"><?php echo $this->session->flashdata('message') ?>
 								<button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -50,6 +51,7 @@
 								</button>
 							</div>
 						<?php endif ?>
+						
 						<table class="data-table table stripe hover nowrap">
 							<thead>
 								<tr>
@@ -99,7 +101,7 @@
 													<i class="dw dw-more"></i>
 												</a>
 												<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-													<a class="dropdown-item" href="<?php echo site_url('jurusan/siswa/pengajuan/print/' . $aaa->id) ?>"><i class="dw dw-print"></i> Print</a>
+													<a class="dropdown-item" href="<?php echo site_url('jurusan/siswa/pengajuan/print/' . $aaa->id) ?>" target="_blank"><i class="dw dw-print"></i> Print</a>
 													<!-- <a class="dropdown-item" href="<?php echo site_url('jurusan/siswa/pengajuan/edit/' . $aaa->id) ?>"><i class="dw dw-edit2"></i> Edit</a> -->
 													<a class="dropdown-item" onclick="deleteConfirm('<?php echo site_url('jurusan/siswa/pengajuan/delete/' . $aaa->id) ?>')" href="#!"><i class="dw dw-delete-3"></i> Hapus</a>
 												</div>

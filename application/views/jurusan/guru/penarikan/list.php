@@ -99,7 +99,7 @@
                                                     <i class="dw dw-more"></i>
                                                 </a>
                                                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-                                                    <a class="dropdown-item" href="<?php echo site_url('jurusan/guru/penarikan/print/' . $aaa->id) ?>"><i class="dw dw-print"></i> Print</a>
+                                                    <a class="dropdown-item" href="<?php echo site_url('jurusan/guru/penarikan/print/' . $aaa->id) ?>" target="_blank"><i class="dw dw-print"></i> Print</a>
                                                     <a class="dropdown-item" href="<?php echo site_url('jurusan/guru/penarikan/edit/' . $aaa->id) ?>"><i class="dw dw-edit2"></i> Edit</a>
                                                     <a class="dropdown-item" onclick="deleteConfirm('<?php echo site_url('jurusan/guru/penarikan/delete/' . $aaa->id) ?>')" href="#!"><i class="dw dw-delete-3"></i> Hapus</a>
                                                 </div>

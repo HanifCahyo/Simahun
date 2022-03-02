@@ -121,6 +121,11 @@ class Kegiatan_model extends CI_Model
         $post = $this->input->post();
         $this->id = $post["id"];
         $this->validasi = $post["validasi"];
+        if (!empty($_FILES["image"]["name"])) {
+            $this->image = $this->_uploadImage();
+        } else {
+            $this->image = $post["old_image"];
+        }
         return $this->db->update($this->_table, $this, array('id' => $post['id']));
     }
 

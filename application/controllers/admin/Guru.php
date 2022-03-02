@@ -23,13 +23,33 @@ class Guru extends CI_Controller
 		$this->load->view('admin/guru/list', $data);
 	}
 
+	public function add()
+	{
+		$guru = $this->guru_model;
+		$data['current_user'] = $this->auth_model->current_user();
+
+		if ($this->input->method() === 'post') {
+			$rules = $this->auth_model->guru_rules();
+			$this->form_validation->set_rules($rules);
+
+			$new_password_data = [
+				'nomor_induk' => $this->input->post('nomor_induk'),
+				'name' => $this->input->post('name'),
+				'password' => password_hash($this->input->post('password'), PASSWORD_DEFAULT),
+			];
+
+			if ($this->auth_model->save($new_password_data)) {
+				$this->session->set_flashdata('message', 'Berhasil disimpan');
+				redirect(site_url('admin/guru'));
+			}
+		}
+		
+		$this->load->view('admin/guru/add', $data);
+	}
+
 	public function edit($id = null)
 	{
-
 		$guru = $this->guru_model;
-		$this->load->library('form_validation');
-		$this->load->model('auth_model');
-		$this->load->model('guru_model');
 		$data['current_user'] = $this->auth_model->current_user();
 
 		if ($this->input->method() === 'post') {

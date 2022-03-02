@@ -38,10 +38,15 @@
 				<!-- Checkbox select Datatable start -->
 				<div class="card-box mb-30">
 					<div class="pb-20">
+
 						<?php if ($this->session->flashdata('msg_success')) : ?>
 							<div class="alert alert-success alert-dismissible fade show" role="alert"><?php echo $this->session->flashdata('msg_success') ?>
+								<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
 							</div>
 						<?php endif ?>
+
 						<table class="data-table table stripe hover nowrap">
 							<thead>
 								<tr>
@@ -67,8 +72,8 @@
 													<i class="dw dw-more"></i>
 												</a>
 												<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-													<a class="dropdown-item" href="<?php echo site_url('jurusan/guru/bimbingan/approve/' . $aaa->id) ?>"><i class="dw dw-eye"></i> Approve</a>
-													<!-- <a class="dropdown-item" href="<?php echo site_url('jurusan/guru/bimbingan/editkegiatan/' . $aaa->id) ?>"><i class="dw dw-edit2"></i> Edit</a>
+													<a class="dropdown-item" href="<?php echo site_url('jurusan/guru/bimbingan/editkegiatan/' . $aaa->id) ?>"><i class="dw dw-edit2"></i> Validasi</a>
+													<!-- <a class="dropdown-item" href="<?php echo site_url('jurusan/guru/bimbingan/approve/' . $aaa->id) ?>"><i class="dw dw-eye"></i> Approve</a>
 													<a class="dropdown-item" href="#"><i class="dw dw-delete-3"></i> Delete</a> -->
 												</div>
 											</div>
@@ -88,7 +93,7 @@
 													<i class="dw dw-more"></i>
 												</a>
 												<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-													<a class="dropdown-item" href="<?php echo site_url('jurusan/guru/bimbingan/editkegiatan/' . $aaa->id) ?>"><i class="dw dw-edit2"></i> Edit</a>
+													<a class="dropdown-item" href="<?php echo site_url('jurusan/guru/bimbingan/editkegiatan/' . $aaa->id) ?>"><i class="dw dw-edit2"></i> Validasi</a>
 													<!-- <a class="dropdown-item" href="<?php echo site_url('jurusan/guru/bimbingan/approve/' . $aaa->id) ?>"><i class="dw dw-eye"></i> Approve</a>
 													<a class="dropdown-item" href="#"><i class="dw dw-delete-3"></i> Delete</a> -->
 												</div>
@@ -128,6 +133,8 @@
 	<script src="<?php echo base_url('assets_deskapp/src/plugins/datatables/js/vfs_fonts.js') ?>"></script>
 	<!-- Datatable Setting js -->
 	<script src="<?php echo base_url('assets_deskapp/vendors/scripts/datatable-setting.js') ?>"></script>
+
+
 
 	<!-- Logout Modal-->
 	<?php $this->load->view("jurusan/guru/_partials/modal.php") ?>

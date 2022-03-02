@@ -34,15 +34,40 @@
                 </div>
                 <!-- Default Basic Forms Start -->
                 <div class="pd-20 card-box mb-30">
-                    <?php if ($this->session->flashdata('message')) : ?>
-                        <div class="alert alert-success alert-dismissible fade show" role="alert"><?php echo $this->session->flashdata('message') ?>
+
+                    <?php if ($this->session->flashdata('msg_success')) : ?>
+                        <div class="alert alert-success alert-dismissible fade show" role="alert"><?php echo $this->session->flashdata('msg_success') ?>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
                         </div>
                     <?php endif ?>
+
                     <div class="clearfix">
-                        <div class="pull-left"> 
+                        <div class="pull-left">
                             <h4 class="text-blue h4">Validasi Kegiatan PKL</h4>
                             <!-- <p class="mb-30">Mohon Isi Data pada Form Dibawah :</p> -->
                         </div>
+                    </div>
+                    <div class="gallery-wrap">
+                        <ul class="row">
+                            <li class="col-lg-4 col-md-6 col-sm-12">
+                                <div class="da-card box-shadow">
+                                    <div class="da-card-photo">
+                                        <img src="<?php echo base_url('upload/kegiatan/' . $kegiatan->image) ?>" alt="">
+                                        <div class="da-overlay">
+                                            <div class="da-social">
+                                                <h5 class="mb-10 color-white pd-20">Lorem ipsum dolor sit amet, consectetur adipisicing.</h5>
+                                                <ul class="clearfix">
+                                                    <li><a href="<?php echo base_url('upload/kegiatan/' . $kegiatan->image) ?>" data-fancybox="images"><i class="fa fa-picture-o"></i></a></li>
+                                                    <li><a href="#"><i class="fa fa-link"></i></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
                     <form action="" method="post" enctype="multipart/form-data">
 
@@ -85,6 +110,7 @@
                                 </div>
                             </div>
                         </div> -->
+                        <input type="hidden" name="old_image" value="<?php echo $kegiatan->image ?>">
                         <div class="form-group row">
                             <label class="col-sm-12 col-md-2 col-form-label">VALIDASI</label>
                             <div class="col-sm-12 col-md-10">
@@ -99,8 +125,6 @@
                                 </select>
                             </div>
                         </div>
-                        <input type="hidden" name="nis" value="<?php echo $kegiatan->nis ?>" />
-
                         <div class="form-group row">
                             <div class="col-sm-12 col-md-10">
                                 <input class="btn btn-success" type="submit" value="SIMPAN" />
@@ -119,6 +143,10 @@
     </div>
     <!-- js -->
     <?php $this->load->view("jurusan/guru/_partials/js.php") ?>
+
+
+    <!-- fancybox Popup Js -->
+    <script src="<?php echo base_url('assets_deskapp/src/plugins/fancybox/dist/jquery.fancybox.js') ?>"></script>
 
     <!-- Logout Modal-->
     <?php $this->load->view("jurusan/guru/_partials/modal.php") ?>

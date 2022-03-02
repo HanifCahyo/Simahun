@@ -74,7 +74,7 @@
 </div>
 
 <div class="left-side-bar">
-<div class="brand-logo">
+    <div class="brand-logo">
         <a href="index.html">
             <img src="<?php echo base_url('assets_deskapp/vendors/images/simahun.png') ?>" alt="" class="dark-logo">
             <img src="<?php echo base_url('assets_deskapp/vendors/images/simahun.png') ?>" alt="" class="light-logo">

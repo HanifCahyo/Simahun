@@ -17,7 +17,28 @@
         <div class="pd-ltr-20 xs-pd-20-10">
             <div class="min-height-200px">
 
-                <?php $this->load->view("admin/_partials/breadcrumb.php") ?>
+            <div class="page-header">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-12">
+                            <div class="title">
+                                <h4>Data Pengguna Siswa</h4>
+                            </div>
+                            <nav aria-label="breadcrumb" role="navigation">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="<?php echo site_url('admin/Dashboard/') ?>">Menu Utama</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Data Pengguna Siswa</li>
+                                </ol>
+                            </nav>
+                        </div>
+                        <div class="col-md-6 col-sm-12 text-right">
+                            <!-- <div class="dropdown">
+                                <a class="btn btn-primary" href="<?php echo site_url('admin/siswa/add') ?>" role="button">
+                                    Tambahkan Baru
+                                </a>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
 
                 <!-- Simple Datatable start -->
                 <div class="card-box mb-30">
