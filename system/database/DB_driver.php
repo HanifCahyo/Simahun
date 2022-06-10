@@ -1981,5 +1981,4 @@ abstract class CI_DB_driver {
 	protected function _reset_select()
 	{
 	}
-
 }
