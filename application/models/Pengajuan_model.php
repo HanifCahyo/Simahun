@@ -57,7 +57,7 @@ class Pengajuan_model extends CI_Model
             [
                 'field' => 'nomor',
                 'label' => 'nomor',
-                'rules' => 'required'
+                'rules' => 'required|max_length[15]|min_length[10]'
             ],
 
             [

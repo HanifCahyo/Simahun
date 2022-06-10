@@ -36,7 +36,7 @@ class Pengajuan extends CI_Controller
         }
 
 		$data['current_user'] = $this->auth_model->current_user();
-		$this->load->view("admin/Pengajuan/add", $data);
+		$this->load->view("admin/pengajuan/add", $data);
     }
 
 	public function print($id = null)

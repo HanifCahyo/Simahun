@@ -18,7 +18,7 @@
         $data["pengajuan"] = $this->pengajuan_model->getTable2();
         $data["pengajuan2"] = $this->pengajuan_model->getTable3();
         $data['current_user'] = $this->auth_model->current_user();
-		$this->load->view("jurusan/siswa/Pengajuan/list", $data);
+		$this->load->view("jurusan/siswa/pengajuan/list", $data);
     }
 
     public function add()
@@ -34,7 +34,7 @@
         }
 
 		$data['current_user'] = $this->auth_model->current_user();
-		$this->load->view("jurusan/siswa/Pengajuan/add", $data);
+		$this->load->view("jurusan/siswa/pengajuan/add", $data);
     }
 
 	public function print($id = null)

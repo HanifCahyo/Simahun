@@ -35,7 +35,7 @@ class Pengajuan extends CI_Controller
         }
 
 		$data['current_user'] = $this->auth_model->current_user();
-		$this->load->view("jurusan/guru/Pengajuan/add", $data);
+		$this->load->view("jurusan/guru/pengajuan/add", $data);
     }
 
 	public function print($id = null)
